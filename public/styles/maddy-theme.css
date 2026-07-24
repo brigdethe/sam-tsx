@@ -1,0 +1,237 @@
+/* Maddy brand palette overrides (from maddygroupltd.com) */
+:root {
+  --color--purple-900: #010535;
+  --color--purple-800: #0a1458;
+  --color--purple-700: #2a2f8f;
+  --color--purple-600: #3b40a0;
+  --color--purple-500: #4d51ab;
+  --color--purple-400: #6b6fc0;
+  --color--purple-300: #898dce;
+  --color--purple-200: #b0b3e0;
+  --color--purple-100: #d0d2ed;
+  --color--purple-50: #e8e9f5;
+  --color--purple-10: #f2f3fa;
+}
+
+/* Hardcoded purple leftovers → brand blues */
+.section.is-videotab-section {
+  background-image: linear-gradient(#010535, #4d51ab) !important;
+}
+
+.blur-element {
+  background-image: linear-gradient(rgba(1, 5, 53, 0), rgba(1, 5, 53, 0.85) 11%, #4d51ab) !important;
+}
+
+.git-right-bg {
+  background-image: linear-gradient(rgba(77, 81, 171, 0), #4d51ab 50%, #010535) !important;
+}
+
+.mask-video-hero.mobile.is-bright-mask {
+  background-image: linear-gradient(rgba(1, 5, 53, 0), #4d51ab 34%, #4d51ab) !important;
+}
+
+.looped-logo.dark-looped {
+  background-color: #010535 !important;
+  border-color: #2a2f8f !important;
+}
+
+.market-logo {
+  border-color: #2a2f8f !important;
+}
+
+.section.is-hero-section {
+  overflow: hidden;
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.section.is-products-hero {
+  overflow: hidden;
+  background-image: none !important;
+  background-color: #010535 !important;
+  position: relative;
+}
+
+.section.is-why-about-hero {
+  overflow: hidden;
+  background-image: none !important;
+  background-color: #010535 !important;
+  position: relative;
+}
+
+.section.is-why-flow-hero:not(.carriers-hero) {
+  overflow: hidden;
+  background-image: none !important;
+  background-color: #010535 !important;
+  position: relative;
+}
+
+.hero-media {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  background-color: #010535;
+  background-image: url(https://ik.imagekit.io/fqsfbn5ad/maddymedia/herobg1?updatedAt=1784879987462);
+  background-size: cover;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+}
+
+.hero-media__video,
+.hero-media__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+.hero-hue-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(1, 5, 53, 0.96) 0%,
+    rgba(1, 5, 53, 0.75) 18%,
+    rgba(77, 81, 171, 0.45) 34%,
+    rgba(77, 81, 171, 0.12) 48%,
+    transparent 58%
+  );
+}
+
+.hero-description-container {
+  z-index: 2;
+}
+
+.w-webflow-badge {
+  display: none !important;
+}
+
+.flex-target {
+  align-items: flex-start;
+  border-bottom-color: #4d51ab !important;
+}
+
+.flex-target h3 {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: break-word;
+  letter-spacing: -0.06rem;
+  line-height: 1.15;
+}
+
+.drop-wrap,
+.drop-sub {
+  overflow: visible;
+}
+
+/* Center the incomplete last row of the About team grid (6 cards / 4 columns). */
+@media screen and (min-width: 992px) {
+  .leadership-team-features .team-member:nth-child(5) {
+    grid-column: 2;
+  }
+
+  .leadership-team-features .team-member:nth-child(6) {
+    grid-column: 3;
+  }
+}
+
+/* Page loader: navy + long logo */
+html.is-page-loading {
+  overflow: hidden;
+}
+
+.maddy-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #010535;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.maddy-loader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.maddy-loader__logo {
+  width: min(14rem, 58vw);
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  animation: maddy-loader-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes maddy-loader-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Mobile nav: panel under the bar, not full-screen, above page content */
+@media screen and (max-width: 991px) {
+  .navbar-wrap {
+    position: relative;
+    z-index: 5000;
+    max-width: 100%;
+  }
+
+  .navbar.w-nav {
+    z-index: 5000;
+    max-width: 100%;
+  }
+
+  .w-nav-overlay {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    overflow: visible !important;
+    z-index: 5001;
+  }
+
+  /* Keep menu in normal flow so the overlay sizes to content (not 0px / not 100vh). */
+  .nav-menu,
+  .w-nav-overlay [data-nav-menu-open] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 1.6rem 1.6rem;
+    z-index: 5001;
+    overflow-x: hidden;
+  }
+
+  .menu-button {
+    position: relative;
+    z-index: 5002;
+  }
+
+  .nav-menu .button.mobile-contact,
+  .nav-menu .is-black-button.mobile-contact {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    opacity: 1 !important;
+  }
+}
