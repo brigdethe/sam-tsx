@@ -11,6 +11,10 @@
   --color--purple-100: #d0d2ed;
   --color--purple-50: #e8e9f5;
   --color--purple-10: #f2f3fa;
+  /* Signature green → primary blue */
+  --color--flow-lime: #4d51ab;
+  --color--flow-pastel-lime-300: #55cee3;
+  --color--flow-pastel-lime-200: #898dce;
 }
 
 /* Hardcoded purple leftovers → brand blues */
