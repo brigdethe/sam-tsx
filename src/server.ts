@@ -36,6 +36,10 @@ export function createApp(): Express {
   return app
 }
 
+const app = createApp()
+
+export default app
+
 function isEntryPoint(): boolean {
   const entry = process.argv[1]
   return entry ? resolve(entry) === fileURLToPath(import.meta.url) : false
@@ -45,7 +49,7 @@ if (isEntryPoint()) {
   const requestedPort = Number.parseInt(process.env.PORT ?? '8080', 10)
   const port = Number.isFinite(requestedPort) ? requestedPort : 8080
 
-  createApp().listen(port, () => {
+  app.listen(port, () => {
     console.log(`Sam TypeScript site is running at http://localhost:${port}`)
   })
 }
