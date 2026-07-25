@@ -131,64 +131,12 @@ function AboutDetails() {
               {"Our team"}
             </h2>
             <p className={"is-md-font-size-body-l"}>
-              {"Specialists across cybersecurity, cloud, DevOps, product and software engineering, working with CEO Kenneth Ansah."}
+              {"Specialists across cybersecurity, cloud, DevOps, product and software engineering."}
             </p>
           </div>
           <div>
             <div className={"team-grid-wrapper w-dyn-list"}>
               <div role={"list"} className={"team-grid w-dyn-items"}>
-                <div role={"listitem"} className={"team-member w-dyn-item"}>
-                  <div className={"person-image-wrapper"}>
-                    <img src={"https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/team-8.jpg"} loading={"lazy"} alt={"Kenneth Ansah"} className={"person-image"} />
-                  </div>
-                  <div className={"person-description"}>
-                    <p className={"is-font-size-title-m is-space-8"}>
-                      {"Kenneth Ansah"}
-                    </p>
-                    <p className={"is-font-size-body-m height-48 is-color-grey-600"}>
-                      {"Chief Executive Officer"}
-                    </p>
-                    <a href={"mailto:info@maddygroupltd.com"} className={"w-inline-block"}>
-                      <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70debe_Vector%20(3).svg"} loading={"lazy"} alt={"Email Kenneth Ansah"} className={"linkedin-img"} />
-                    </a>
-                    <div className={"button-bio"}>
-                      <div className={"person-modal-bio"}>
-                        <div data-w-id={"819a7619-058e-fe5e-e508-32c2a8c2073f"} className={"close-modal-screen"}></div>
-                        <div className={"modal-content"}>
-                          <div className={"modal-flex"}>
-                            <img src={"https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/team-8.jpg"} loading={"lazy"} alt={"Kenneth Ansah"} className={"modal-img"} />
-                            <div className={"modal-desc"}>
-                              <h3 className={"is-space-16"}>
-                                {"Kenneth Ansah"}
-                              </h3>
-                              <p className={"is-color-grey-600 w-dyn-bind-empty"}></p>
-                              <p className={"is-color-grey-600"}>
-                                {"Chief Executive Officer"}
-                              </p>
-                              <a href={"mailto:info@maddygroupltd.com"} className={"w-inline-block"}>
-                                <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70debf_linkedin.svg"} loading={"lazy"} alt={"Email Kenneth Ansah"} className={"modal-social"} />
-                              </a>
-                            </div>
-                            <a data-w-id={"13c97fee-792b-f948-687f-e27b50c682e5"} href={"#"} className={"close-block w-inline-block"}>
-                              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec0_close.svg"} loading={"eager"} alt={""} />
-                            </a>
-                          </div>
-                          <div className={"modal-bio is-font-size-body-m"}>
-                            <p className={"bio-text"}>
-                              {"Kenneth leads Maddy Group Ltd from Accra. He oversees delivery across cybersecurity, software and managed technology services for public and private organisations."}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <a data-w-id={"4335ad49-91df-10c7-ba15-f818e8a4b63c"} href={"#"} className={"button is-purple-button w-inline-block"}>
-                        <p className={"is-font-size-title-s"}>
-                          {"Read Bio"}
-                        </p>
-                        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70ddfa_arrow-top-right%201.svg"} loading={"lazy"} alt={""} className={"button-arrow inversed"} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
                 <div role={"listitem"} className={"team-member w-dyn-item"}>
                   <div className={"person-image-wrapper"}>
                     <img src={"https://maddygroup.lon1.cdn.digitaloceanspaces.com/images/team-1.jpg"} loading={"lazy"} alt={"Dunstan Guba"} className={"person-image"} />

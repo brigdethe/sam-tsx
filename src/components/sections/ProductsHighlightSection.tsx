@@ -37,8 +37,8 @@ export function ProductsHighlightSection() {
           </div>
         </div>
         <div className="is-text-center" style={{ marginTop: '2rem' }}>
-          <a href="/products-appetite#software-products" className="button w-inline-block">
-            <p>{"See products on Services"}</p>
+          <a href="/software-products" className="button w-inline-block">
+            <p>{"Explore software products"}</p>
             <img
               loading="lazy"
               src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70ddfa_arrow-top-right%201.svg"

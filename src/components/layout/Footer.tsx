@@ -1,3 +1,5 @@
+import { technologyNavItems } from '../../content/technologyNav.js'
+
 type FooterProps = {
   brand?: 'flow' | 'maddy'
 }
@@ -16,14 +18,31 @@ export function Footer({ brand = 'flow' }: FooterProps) {
                 <a href="/products-appetite" className="footer-link">
                   {isMaddy ? "Services" : "Products & Appetite"}
                 </a>
-                <a href="/retail-brokers" className="footer-link">
-                  {isMaddy ? "Security Assessment" : "Flow for Retail Agents"}
-                </a>
-                <a href="/carriers" className="footer-link">
-                  {isMaddy ? "Software Development" : "Flow for Carriers"}
-                </a>
+                {isMaddy ? (
+                  technologyNavItems.slice(0, 4).map((item) => (
+                    <a key={item.href} href={item.href} className="footer-link">
+                      {item.label}
+                    </a>
+                  ))
+                ) : (
+                  <>
+                    <a href="/retail-brokers" className="footer-link">
+                      {"Flow for Retail Agents"}
+                    </a>
+                    <a href="/carriers" className="footer-link">
+                      {"Flow for Carriers"}
+                    </a>
+                  </>
+                )}
               </div>
               <div className="footer-menu">
+                {isMaddy
+                  ? technologyNavItems.slice(4).map((item) => (
+                      <a key={item.href} href={item.href} className="footer-link">
+                        {item.label}
+                      </a>
+                    ))
+                  : null}
                 <a href="/about-us" className="footer-link">
                   {"About Us"}
                 </a>

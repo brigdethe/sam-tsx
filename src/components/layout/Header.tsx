@@ -1,3 +1,4 @@
+import { technologyNavItems } from '../../content/technologyNav.js'
 import { ButtonLink } from '../ui/ButtonLink.js'
 
 type HeaderProps = {
@@ -13,6 +14,7 @@ function currentLinkClass(baseClassName: string, href: string, currentPath: stri
 export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow' }: HeaderProps) {
     const isCurrent = (href: string) => href === currentPath
     const isMaddy = brand === 'maddy'
+    const technologyActive = technologyNavItems.some((item) => item.href === currentPath)
 
     return (<div className="navbar-wrap">
         <div data-w-id="c12b8b16-d300-2a9c-ceac-b3f5e3d95ba0" className="navbar-trigger"></div>
@@ -33,7 +35,7 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
                 {isMaddy ? "Services" : "Products & Appetite"}
               </a>
               <div data-hover="true" data-delay="0" className="dropdown w-dropdown">
-                <div className="nav-link is-dropdown w-dropdown-toggle">
+                <div className={`nav-link is-dropdown w-dropdown-toggle${technologyActive ? ' w--current' : ''}`}>
                   <div>
                     {isMaddy ? "Technologies" : "Why Flow?"}
                   </div>
@@ -41,12 +43,27 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
                 </div>
                 <nav className="dropdown-list w-dropdown-list">
                   <div className="navbar-dropdown-wrapper">
-                    <a href="/retail-brokers" aria-current={isCurrent('/retail-brokers') ? 'page' : undefined} className={currentLinkClass('dropdown-link navbar-dl-link w-dropdown-link', '/retail-brokers', currentPath)}>
-                      {isMaddy ? "Security Assessment" : "For Retail Agents"}
-                    </a>
-                    <a href="/carriers" aria-current={isCurrent('/carriers') ? 'page' : undefined} className={currentLinkClass('dropdown-link navbar-dl-link w-dropdown-link', '/carriers', currentPath)}>
-                      {isMaddy ? "Software Development" : "For Carriers"}
-                    </a>
+                    {isMaddy ? (
+                      technologyNavItems.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          aria-current={isCurrent(item.href) ? 'page' : undefined}
+                          className={currentLinkClass('dropdown-link navbar-dl-link w-dropdown-link', item.href, currentPath)}
+                        >
+                          {item.label}
+                        </a>
+                      ))
+                    ) : (
+                      <>
+                        <a href="/retail-brokers" aria-current={isCurrent('/retail-brokers') ? 'page' : undefined} className={currentLinkClass('dropdown-link navbar-dl-link w-dropdown-link', '/retail-brokers', currentPath)}>
+                          {"For Retail Agents"}
+                        </a>
+                        <a href="/carriers" aria-current={isCurrent('/carriers') ? 'page' : undefined} className={currentLinkClass('dropdown-link navbar-dl-link w-dropdown-link', '/carriers', currentPath)}>
+                          {"For Carriers"}
+                        </a>
+                      </>
+                    )}
                   </div>
                 </nav>
               </div>

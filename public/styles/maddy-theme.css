@@ -224,43 +224,57 @@ html.is-page-loading {
   }
 }
 
-/* Mobile nav: panel under the bar, not full-screen, above page content */
+/* Mobile nav: sticky bar + compact menu flush under it */
 @media screen and (max-width: 991px) {
   .navbar-wrap {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 5000;
     max-width: 100%;
   }
 
   .navbar.w-nav {
+    position: relative !important;
     z-index: 5000;
     max-width: 100%;
+    width: 100%;
   }
 
   .w-nav-overlay {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
     height: auto !important;
     width: 100% !important;
     max-width: 100%;
-    left: 0 !important;
-    right: 0 !important;
     overflow: visible !important;
     z-index: 5001;
   }
 
-  /* Keep menu in normal flow so the overlay sizes to content (not 0px / not 100vh). */
+  /* Kill the full-viewport menu sheet; size to links only */
   .nav-menu,
-  .w-nav-overlay [data-nav-menu-open] {
+  .w-nav-overlay [data-nav-menu-open],
+  .navbar .w-nav-menu {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
+    bottom: auto !important;
     height: auto !important;
+    min-height: 0 !important;
+    max-height: min(70vh, 32rem);
     width: 100% !important;
     max-width: 100%;
     box-sizing: border-box;
     border-radius: 0 0 1.6rem 1.6rem;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 1rem !important;
     z-index: 5001;
     overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .menu-button {
@@ -275,5 +289,74 @@ html.is-page-loading {
     box-sizing: border-box;
     white-space: normal;
     opacity: 1 !important;
+  }
+
+  /* Smooth Technologies open/close (Webflow toggles display; keep it block and animate height) */
+  .navbar .dropdown.w-dropdown {
+    width: 100%;
+  }
+
+  .navbar .dropdown-list.w-dropdown-list {
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    background: transparent !important;
+    transition:
+      max-height 0.38s ease,
+      opacity 0.28s ease,
+      margin 0.32s ease,
+      visibility 0.28s ease;
+  }
+
+  .navbar .dropdown-list.w-dropdown-list.w--open {
+    max-height: 22rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    margin: 0.25rem 0 0.75rem;
+    overflow-y: auto;
+  }
+
+  .navbar .navbar-dropdown-wrapper {
+    box-shadow: none;
+    border-style: none;
+    border-radius: 0.9rem;
+    background: #f6f5f7;
+    margin: 0;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .navbar .arrow-icon.drop {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar .dropdown.w--open .arrow-icon.drop,
+  .navbar .w-dropdown-toggle.w--open .arrow-icon.drop {
+    transform: rotate(180deg);
+  }
+}
+
+/* Technologies dropdown: room for the expanded service list */
+@media screen and (min-width: 992px) {
+  .navbar .dropdown-list.w-dropdown-list {
+    max-height: min(70vh, 28rem);
+    overflow-y: auto;
+  }
+
+  .navbar .navbar-dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 14rem;
   }
 }
