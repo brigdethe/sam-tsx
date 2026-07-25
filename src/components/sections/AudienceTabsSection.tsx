@@ -10,7 +10,7 @@ export function AudienceTabsSection() {
               </a>
               <a data-w-tab="For Carriers" className="tab-link w-inline-block w-tab-link">
                 <div className="is-font-size-title-s is-sm-font-size-title-m">
-                  {"Our Services"}
+                  {"Our Software"}
                 </div>
               </a>
             </div>
@@ -85,9 +85,9 @@ export function AudienceTabsSection() {
               <div data-w-tab="For Carriers" className="tab-pane w-tab-pane">
                 <div className="tab-description-pane">
                   <h3>
-                    {"Professional Technology Services "}
+                    {"Software built for "}
                     <br />
-                    {"for Ghanaian Businesses"}
+                    {"how you work"}
                   </h3>
                   <a href="/carriers" className="button w-inline-block">
                     <p>
@@ -100,37 +100,37 @@ export function AudienceTabsSection() {
                   <div className="tab-description-item">
                     <img width="64" height="64" alt="" src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec2_Group%20120%201.svg" loading="lazy" className="tab-icon"/>
                     <p className="tab-card-title sr">
-                      {"Security Assessment"}
+                      {"Custom applications"}
                     </p>
                     <p className="is-font-size-body-m is-color-grey-600">
-                      {"Comprehensive security evaluation, vulnerability assessment, risk analysis, and clear recommendations."}
+                      {"Desktop, mobile and enterprise applications shaped around your operations and users."}
                     </p>
                   </div>
                   <div className="tab-description-item">
                     <img width="64" height="64" alt="" src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec4_Group%20(4).svg" loading="lazy" className="tab-icon"/>
                     <p className="tab-card-title sr">
-                      {"Managed SOC Services"}
+                      {"Websites and portals"}
                     </p>
                     <p className="is-font-size-body-m is-color-grey-600">
-                      {"24/7 security monitoring, threat response, incident investigation, and monthly security reports."}
+                      {"Corporate sites, e-commerce and customer portals with hosting and cloud deployment options."}
                     </p>
                   </div>
                   <div className="tab-description-item">
                     <img width="64" height="64" alt="" src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec5_Group%20102.svg" loading="lazy" className="tab-icon"/>
                     <p className="tab-card-title sr">
-                      {"Virtual CISO"}
+                      {"Systems integration"}
                     </p>
                     <p className="is-font-size-body-m is-color-grey-600">
-                      {"Strategic cybersecurity leadership, board-level reporting, compliance oversight, and vendor management."}
+                      {"Connect new software to the databases and third-party tools you already run."}
                     </p>
                   </div>
                   <div className="tab-description-item">
                     <img width="64" height="64" alt="" src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec6_ico%20(1).svg" loading="lazy" className="tab-icon"/>
                     <p className="tab-card-title sr last">
-                      {"Flexible Service Agreements"}
+                      {"Support after launch"}
                     </p>
                     <p className="is-font-size-body-m is-color-grey-600">
-                      {"Free initial consultation, customized pricing, and service agreements shaped around your needs."}
+                      {"Clear scopes, delivery timelines and maintenance packages once the system is live."}
                     </p>
                   </div>
                 </div>

@@ -73,7 +73,7 @@ function CarriersHero() {
               </h2>
               <div className={"markets-description"}>
                 <p className={"is-font-size-body-l"}>
-                  {"From internal tools to customer-facing products, we design and ship software that fits your operations. Websites and portals sit alongside deeper application work when you need more than a brochure site."}
+                  {"From internal tools to customer-facing products, we design and ship software that fits your operations. Websites and portals sit alongside deeper application work when you need more than a brochure site. Indicative timelines: simple mobile apps in 2 to 3 months, complex enterprise systems in 6 to 12 months or more, simple websites in 2 to 4 weeks, and e-commerce in 6 to 8 weeks."}
                 </p>
               </div>
             </div>

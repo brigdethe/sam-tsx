@@ -10,6 +10,7 @@ import { CarriersSection } from './components/sections/CarriersSection.js'
 import { GrowthSection } from './components/sections/GrowthSection.js'
 import { HeroSection } from './components/sections/HeroSection.js'
 import { InvestorsSection } from './components/sections/InvestorsSection.js'
+import { ProductsHighlightSection } from './components/sections/ProductsHighlightSection.js'
 import { SpecialtiesIntroSection } from './components/sections/SpecialtiesIntroSection.js'
 import { SpecialtiesTabsSection } from './components/sections/SpecialtiesTabsSection.js'
 import { TestimonialsSection } from './components/sections/TestimonialsSection.js'
@@ -43,6 +44,7 @@ export function App() {
       <PageWrapper className="is-overflow-hidden is-no-padding">
         <AudienceTabsSection />
         <TestimonialsSection />
+        <ProductsHighlightSection />
         <InvestorsSection />
         <CallToActionSection />
         <Footer brand="maddy" />

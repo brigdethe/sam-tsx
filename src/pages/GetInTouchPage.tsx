@@ -95,75 +95,54 @@ function GetInTouchContent() {
               </div>
               <div className={"git-right"}>
                 <div className={"form-block w-form"}>
-                  <form id={"email-form"} name={"email-form"} data-name={"Email Form"} method={"get"} className={"form"} data-wf-page-id={"6627b50ad2ace3686c70ddbd"} data-wf-element-id={"8168169c-1552-be5a-fc67-a0ca29a108ee"}>
+                  <form id={"email-form"} name={"email-form"} data-name={"Email Form"} method={"post"} action={"mailto:info@maddygroupltd.com"} encType={"text/plain"} className={"form"}>
                     <input className={"text-field w-input"} maxLength={256} name={"name"} data-name={"Name"} placeholder={"Full name"} type={"text"} id={"name"} required />
-                    <input className={"text-field w-input"} maxLength={256} name={"E-mail"} data-name={"E-mail"} placeholder={"E-mail address"} type={"email"} id={"E-mail"} required />
-                    <input className={"text-field w-input"} maxLength={256} name={"Company-name"} data-name={"Company name"} placeholder={"Company name"} type={"text"} id={"Company-name"} required />
-                    <div data-hover={"false"} data-delay={"0"} fs-selectcustom-hideinitial={"true"} fs-selectcustom-element={"dropdown"} className={"dropdown-form w-dropdown"}>
-                      <div className={"text-field w-dropdown-toggle"}>
-                        <div className={"icon w-icon-dropdown-toggle"}></div>
-                        <div className={"is-color-grey-600"}>
-                          {"How can we help?"}
-                        </div>
-                      </div>
-                      <nav className={"dropdown-bottom w-dropdown-list"}>
-                        <select id={"Enquiry-type"} name={"Enquiry-type"} data-name={"Enquiry type"} required className={"text-field select-field w-select"}>
-                          <option value={""}>
-                            {"How can we help?"}
-                          </option>
-                          <option value={"Cybersecurity"}>
-                            {"Cybersecurity"}
-                          </option>
-                          <option value={"Software development"}>
-                            {"Software development"}
-                          </option>
-                          <option value={"Request a quote"}>
-                            {"Request a quote"}
-                          </option>
-                          <option value={"Other"}>
-                            {"Other"}
-                          </option>
-                        </select>
-                        <div className={"dropdown-form-list"}>
-                          <a href={"#"} className={"drop-form is-font-size-title-s w-dropdown-link"}>
-                            {"Link 1"}
-                          </a>
-                        </div>
-                      </nav>
-                    </div>
-                    <div data-hover={"false"} data-delay={"0"} fs-selectcustom-hideinitial={"true"} fs-selectcustom-element={"dropdown"} className={"dropdown-form w-dropdown"}>
-                      <div className={"text-field w-dropdown-toggle"}>
-                        <div className={"icon w-icon-dropdown-toggle"}></div>
-                        <div className={"is-color-grey-600 wrap"}>
-                          {"Where did you hear about us? (optional)"}
-                        </div>
-                      </div>
-                      <nav className={"dropdown-bottom w-dropdown-list"}>
-                        <select id={"Where-did-you-hear-about-us"} name={"Where-did-you-hear-about-us"} data-name={"Where did you hear about us?"} className={"text-field select-field w-select"}>
-                          <option value={""}>
-                            {"Where did you hear about us? (optional)"}
-                          </option>
-                          <option value={"Referral"}>
-                            {"Referral"}
-                          </option>
-                          <option value={"Search"}>
-                            {"Search"}
-                          </option>
-                          <option value={"Event"}>
-                            {"Event"}
-                          </option>
-                          <option value={"Other"}>
-                            {"Other"}
-                          </option>
-                        </select>
-                        <div className={"dropdown-form-list"}>
-                          <a href={"#"} className={"drop-form is-font-size-title-s w-dropdown-link"}>
-                            {"Link 1"}
-                          </a>
-                        </div>
-                      </nav>
-                    </div>
-                    <textarea required placeholder={"Message"} maxLength={5000} id={"Text-Message"} name={"Text-Message"} data-name={"Text Message"} className={"text-field message-area w-input"}></textarea>
+                    <input className={"text-field w-input"} maxLength={256} name={"email"} data-name={"E-mail"} placeholder={"E-mail address"} type={"email"} id={"E-mail"} required />
+                    <input className={"text-field w-input"} maxLength={256} name={"company"} data-name={"Company name"} placeholder={"Company name"} type={"text"} id={"Company-name"} required />
+                    <select id={"Enquiry-type"} name={"enquiry"} data-name={"Enquiry type"} required className={"text-field select-field w-select"}>
+                      <option value={""}>
+                        {"How can we help?"}
+                      </option>
+                      <option value={"Cybersecurity"}>
+                        {"Cybersecurity"}
+                      </option>
+                      <option value={"Software development"}>
+                        {"Software development"}
+                      </option>
+                      <option value={"Software products"}>
+                        {"Software products"}
+                      </option>
+                      <option value={"UAV / IoT / procurement"}>
+                        {"UAV, IoT or ICT procurement"}
+                      </option>
+                      <option value={"Training"}>
+                        {"Training"}
+                      </option>
+                      <option value={"Request a quote"}>
+                        {"Request a quote"}
+                      </option>
+                      <option value={"Other"}>
+                        {"Other"}
+                      </option>
+                    </select>
+                    <select id={"Where-did-you-hear-about-us"} name={"source"} data-name={"Where did you hear about us?"} className={"text-field select-field w-select"}>
+                      <option value={""}>
+                        {"Where did you hear about us? (optional)"}
+                      </option>
+                      <option value={"Referral"}>
+                        {"Referral"}
+                      </option>
+                      <option value={"Search"}>
+                        {"Search"}
+                      </option>
+                      <option value={"Event"}>
+                        {"Event"}
+                      </option>
+                      <option value={"Other"}>
+                        {"Other"}
+                      </option>
+                    </select>
+                    <textarea required placeholder={"Message"} maxLength={5000} id={"Text-Message"} name={"message"} data-name={"Text Message"} className={"text-field message-area w-input"}></textarea>
                     <input type={"submit"} data-wait={"Please wait..."} className={"button submit-button w-button"} value={"Request a quote"} />
                   </form>
                   <div className={"success-message w-form-done"}>
@@ -199,7 +178,35 @@ function PageRuntime() {
       <script dangerouslySetInnerHTML={{ __html: sitePageCode.getInTouch[2] }} />
       <script dangerouslySetInnerHTML={{ __html: sitePageCode.getInTouch[3] }} />
       <script dangerouslySetInnerHTML={{ __html: sitePageCode.getInTouch[4] }} />
-      <script defer src={"/vendor/selectcustom.js"}></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+(function () {
+  var form = document.getElementById('email-form');
+  if (!form) return;
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    var data = new FormData(form);
+    var lines = [];
+    data.forEach(function (value, key) {
+      if (String(value).trim()) lines.push(key + ': ' + value);
+    });
+    var body = lines.join('\\n');
+    var subject = encodeURIComponent('Website enquiry from ' + (data.get('name') || 'Maddy Group site'));
+    window.location.href = 'mailto:info@maddygroupltd.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+    var done = form.parentElement && form.parentElement.querySelector('.w-form-done');
+    var fail = form.parentElement && form.parentElement.querySelector('.w-form-fail');
+    if (done) {
+      form.style.display = 'none';
+      done.style.display = 'block';
+    }
+    if (fail) fail.style.display = 'none';
+  });
+})();
+`,
+        }}
+      />
     </>
   )
 }

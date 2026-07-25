@@ -17,7 +17,7 @@ export function Footer({ brand = 'flow' }: FooterProps) {
                   {isMaddy ? "Services" : "Products & Appetite"}
                 </a>
                 <a href="/retail-brokers" className="footer-link">
-                  {isMaddy ? "Cybersecurity Services" : "Flow for Retail Agents"}
+                  {isMaddy ? "Security Assessment" : "Flow for Retail Agents"}
                 </a>
                 <a href="/carriers" className="footer-link">
                   {isMaddy ? "Software Development" : "Flow for Carriers"}
@@ -27,16 +27,39 @@ export function Footer({ brand = 'flow' }: FooterProps) {
                 <a href="/about-us" className="footer-link">
                   {"About Us"}
                 </a>
+                <a href="/get-in-touch" className="footer-link">
+                  {"Contact Us"}
+                </a>
               </div>
               <div className="footer-social">
                 <div className="is-font-size-title-l social-title">
                   {isMaddy ? "Contact" : "Let's connect"}
                 </div>
-                <div className="social-footer-wrap">
-                  <a data-w-id="7b6a67b9-6323-cb3c-abdf-ba2ae45ad720" href="#" className="social-button w-inline-block">
-                    <img src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de4f_logo-linkedin%201.svg" loading="lazy" width="20" height="20" alt="" className="button-icon"/>
-                  </a>
-                </div>
+                {isMaddy ? (
+                  <div className="is-font-size-body-s" style={{ maxWidth: '16rem' }}>
+                    <p style={{ margin: '0 0 0.4rem' }}>
+                      <a href="tel:0551111551" className="footer-link">
+                        {"0551111551"}
+                      </a>
+                    </p>
+                    <p style={{ margin: '0 0 0.4rem' }}>
+                      <a href="mailto:info@maddygroupltd.com" className="footer-link">
+                        {"info@maddygroupltd.com"}
+                      </a>
+                    </p>
+                    <p style={{ margin: 0 }} className="is-opacity-60">
+                      {"GD-219-3654, Adjetey Mensah Owusu St, Adjiriganor, Accra"}
+                      <br />
+                      {"P.O. Box 10606, Accra North"}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="social-footer-wrap">
+                    <a data-w-id="7b6a67b9-6323-cb3c-abdf-ba2ae45ad720" href="#" className="social-button w-inline-block">
+                      <img src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de4f_logo-linkedin%201.svg" loading="lazy" width="20" height="20" alt="" className="button-icon"/>
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -45,13 +68,13 @@ export function Footer({ brand = 'flow' }: FooterProps) {
           <div className="w-layout-blockcontainer container w-container">
             <div className="footer-flex sub-footer">
               <p className="is-font-size-body-s copyrights">
-                {isMaddy ? "Copyright © 2025 Maddy Group Ltd. All Rights Reserved." : "© Copyright 2024 – All rights reserved"}
+                {isMaddy ? "Copyright © 2026 Maddy Group Ltd. All Rights Reserved." : "© Copyright 2024 – All rights reserved"}
               </p>
               <div className="legal-pages-menu">
-                <a href="#" className="footer-link is-font-size-body-s">
+                <a href="/terms-of-use" className="footer-link is-font-size-body-s">
                   {"Terms & Conditions"}
                 </a>
-                <a href="#" className="footer-link is-font-size-body-s">
+                <a href="/privacy-policy" className="footer-link is-font-size-body-s">
                   {"Privacy Policy"}
                 </a>
               </div>

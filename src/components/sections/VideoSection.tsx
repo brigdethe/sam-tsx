@@ -11,13 +11,13 @@ export function VideoSection() {
         </div>
         <div className="w-layout-blockcontainer container video-description w-container">
           <h3 data-w-id="37ccef0a-720f-03f7-18af-3c475af6356c">
-            {"Ghana's leading technology experts"}
+            {"Technology with professional care"}
           </h3>
           <div className="subtle-divider"></div>
           <div className="video-copy">
             <div className="video-desc">
               <p data-w-id="1b39b2b6-1eac-7688-bd2b-5e16c81a7ce8" className="is-md-font-size-body-l">
-                {"We provide comprehensive technology solutions, including software development, web design, and expert cybersecurity services to drive business growth."}
+                {"Cybersecurity, software development, websites, IoT and managed technology services for organisations across Ghana, from our base in Adjiriganor, Accra."}
               </p>
             </div>
           </div>

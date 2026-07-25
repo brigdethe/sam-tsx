@@ -148,7 +148,7 @@ export function SpecialtiesTabsSection() {
                     </ul>
                   </div>
                 </div>
-                <a href="/products-appetite#w-tabs-0-data-w-pane-0" className="button w-inline-block">
+                <a href="/products-appetite#w-tabs-0-data-w-pane-1" className="button w-inline-block">
                   <p>
                     {"Explore Software Development"}
                   </p>
@@ -221,7 +221,7 @@ export function SpecialtiesTabsSection() {
                     </ul>
                   </div>
                 </div>
-                <a href="/products-appetite#w-tabs-0-data-w-pane-0" className="button w-inline-block">
+                <a href="/products-appetite#w-tabs-0-data-w-pane-2" className="button w-inline-block">
                   <p>
                     {"Explore IoT Services"}
                   </p>
