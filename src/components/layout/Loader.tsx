@@ -28,13 +28,13 @@ export function LoaderRuntime() {
 
   function criticalImages() {
     var nodes = document.querySelectorAll(
-      '.logo-img, .hero-media__image, img[loading="eager"], .maddy-loader__logo'
+      '.logo-img, .hero-media__image, .maddy-loader__logo'
     );
     return Array.prototype.slice.call(nodes);
   }
 
   function whenImageReady(img) {
-    if (img.complete && img.naturalWidth > 0) {
+    if (img.complete) {
       return Promise.resolve();
     }
     return new Promise(function (resolve) {
@@ -109,6 +109,7 @@ export function LoaderRuntime() {
         var clone = loader.cloneNode(true);
         clone.classList.remove('is-done');
         clone.id = 'maddy-loader';
+        clone.setAttribute('aria-busy', 'true');
         document.body.insertBefore(clone, document.body.firstChild);
       } else {
         loader.classList.remove('is-done');
