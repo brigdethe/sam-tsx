@@ -36,7 +36,7 @@ function ProductsHero() {
         <div className={"hero-media"} aria-hidden={"true"}>
           <img
             className={"hero-media__image"}
-            src={"https://ik.imagekit.io/fqsfbn5ad/maddymedia/cytonn-photography-n95VMLxqM2I-unsplash.jpg"}
+            src={"/images/brand/accra-growth-prince-enos-31800284.jpg"}
             alt={""}
             loading={"eager"}
           />
@@ -101,7 +101,7 @@ function ProductsHero() {
             ))}
           </div>
         </div>
-        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%20(2).webp"} loading={"lazy"} sizes={"100vw"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%2520(2)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%2520(2)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%2520(2)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%2520(2)-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%2520(2)-p-2000.webp 2000w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def6_Layer_1%20(2).webp 2880w"} alt={""} className={"kv_about"} />
+        <div className={"maddy-section-backdrop"} aria-hidden={"true"} />
       </section>
     </div>
   )
@@ -145,7 +145,7 @@ function ProductsDirectory() {
                 <div className={"full-wrapper"}>
                   <div className={"info-feature-flex tab-flex"}>
                     <div className={"rounded-feature-picture"}>
-                      <img sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 42vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def7_Rectangle%2520674%2520(3)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def7_Rectangle%2520674%2520(3)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def7_Rectangle%2520674%2520(3)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def7_Rectangle%20674%20(3).webp 1184w"} alt={""} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def7_Rectangle%20674%20(3).webp"} loading={"lazy"} className={"rounded-feature-img"} />
+                      <img src={"/images/brand/cyber-workstation-cottonbro-8720270.jpg"} alt={"Cybersecurity workstation running monitoring and diagnostic tools"} loading={"lazy"} className={"rounded-feature-img"} />
                     </div>
                     <div className={"info-feature-desc container"}>
                       <h3 className={"is-space-24 is-md-space-16 is-h2-mobile"}>
@@ -194,7 +194,7 @@ function ProductsDirectory() {
                       </div>
                     </div>
                     <div className={"rounded-feature-picture full-image"}>
-                      <img sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 43vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def8_Rectangle%2520674%2520(4)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def8_Rectangle%2520674%2520(4)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def8_Rectangle%2520674%2520(4)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def8_Rectangle%20674%20(4).webp 1184w"} alt={""} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def8_Rectangle%20674%20(4).webp"} loading={"lazy"} className={"rounded-feature-img"} />
+                      <img src={"/images/brand/security-analyst-kampus-8204353.jpg"} alt={"Security analyst reviewing live monitoring data across multiple displays"} loading={"lazy"} className={"rounded-feature-img"} />
                     </div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ function ProductsDirectory() {
                           <nav id={"w-dropdown-list-1"} className={"drop-sub _1 w-dropdown-list"}>
                             <div className={"drop-wrap"}>
                               <div className={"flex-target"}>
-                                <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df12_Rectangle%20695%20(2).webp"} alt={""} className={"target-img"} />
+                                <img loading={"lazy"} src={"/images/brand/network-cables-brett-sayles-1597776.jpg"} alt={"Secured network connections in data-centre infrastructure"} className={"target-img"} />
                                 <h3>
                                   {"Testing & assessments"}
                                 </h3>
@@ -243,7 +243,7 @@ function ProductsDirectory() {
                           <nav className={"drop-sub is-bottom-2-mobile w-dropdown-list"}>
                             <div className={"drop-wrap"}>
                               <div className={"flex-target"}>
-                                <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df03_Rectangle%20695-1.webp"} alt={""} className={"target-img"} />
+                                <img loading={"lazy"} src={"/images/brand/server-rack-panumas-17489156.jpg"} alt={"Protected server infrastructure in a modern data centre"} className={"target-img"} />
                                 <h3>
                                   {"Managed detection"}
                                 </h3>
@@ -268,7 +268,7 @@ function ProductsDirectory() {
                           <nav className={"drop-sub _3 w-dropdown-list"}>
                             <div className={"drop-wrap"}>
                               <div className={"flex-target"}>
-                                <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df04_Rectangle%20695-2.webp"} alt={""} className={"target-img"} />
+                                <img loading={"lazy"} src={"/images/brand/smart-card-susanne-plank-13657375.jpg"} alt={"Access card being presented to a secure reader"} className={"target-img"} />
                                 <h3>
                                   {"Identity & access"}
                                 </h3>
@@ -293,7 +293,7 @@ function ProductsDirectory() {
                           <nav className={"drop-sub _4 w-dropdown-list"}>
                             <div className={"drop-wrap"}>
                               <div className={"flex-target"}>
-                                <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df0c_Rectangle%20695-3.webp"} alt={""} className={"target-img _4"} />
+                                <img loading={"lazy"} src={"/images/brand/accra-modern-architecture-larry-dre-7066315.jpg"} alt={"Modern connected business infrastructure in Accra"} className={"target-img _4"} />
                                 <h3>
                                   {"Cloud & email security"}
                                 </h3>
@@ -318,7 +318,7 @@ function ProductsDirectory() {
                           <nav className={"drop-sub _5 w-dropdown-list"}>
                             <div className={"drop-wrap"}>
                               <div className={"flex-target"}>
-                                <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df0d_Rectangle%20695-4.webp"} alt={""} className={"target-img _4"} />
+                                <img loading={"lazy"} src={"/images/brand/accra-stem-class-zeal-33920052.jpg"} alt={"Students developing practical technology skills in Accra"} className={"target-img _4"} />
                                 <h3>
                                   {"Governance & training"}
                                 </h3>
@@ -399,7 +399,7 @@ function ProductsDirectory() {
                 <div className={"full-wrapper"}>
                   <div className={"info-feature-flex tab-flex"}>
                     <div className={"rounded-feature-picture"}>
-                      <img sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 42vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def9_Group%2520238094%2520(1)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def9_Group%2520238094%2520(1)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def9_Group%2520238094%2520(1)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def9_Group%20238094%20(1).webp 1184w"} alt={""} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70def9_Group%20238094%20(1).webp"} loading={"eager"} className={"rounded-feature-img"} />
+                      <img src={"/images/brand/developer-woman-christina-morillo-1181359.jpg"} alt={"Software developer writing and reviewing application code"} loading={"lazy"} className={"rounded-feature-img"} />
                     </div>
                     <div className={"info-feature-desc container"}>
                       <h3 className={"is-space-24 is-md-space-16 is-h2-mobile"}>
@@ -454,7 +454,7 @@ function ProductsDirectory() {
                       </div>
                     </div>
                     <div className={"rounded-feature-picture full-image"}>
-                      <img sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 43vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defa_Group%2520238094%2520(2)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defa_Group%2520238094%2520(2)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defa_Group%2520238094%2520(2)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defa_Group%20238094%20(2).webp 1184w"} alt={""} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defa_Group%20238094%20(2).webp"} loading={"eager"} className={"rounded-feature-img"} />
+                      <img src={"/images/brand/software-collaboration-mizuno-k-12899191.jpg"} alt={"Developers reviewing code together"} loading={"lazy"} className={"rounded-feature-img"} />
                     </div>
                   </div>
                 </div>
@@ -481,7 +481,7 @@ function ProductsDirectory() {
                         <nav id={"w-dropdown-list-1"} className={"drop-sub _1 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df12_Rectangle%20695%20(2).webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/coding-laptop-cottonbro-5483075.jpg"} alt={"Application code being developed on a laptop"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Custom applications"}
@@ -510,7 +510,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _2 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df03_Rectangle%20695-1.webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/remote-coding-thisisengineering-3861964.jpg"} alt={"Developer collaborating remotely while writing application code"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Websites & portals"}
@@ -539,7 +539,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _3 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df04_Rectangle%20695-2.webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/software-developer-naboth-otieno-19805876.jpg"} alt={"Software development workstation"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Integration & support"}
@@ -613,7 +613,7 @@ function ProductsDirectory() {
                 <div className={"full-wrapper"}>
                   <div className={"info-feature-flex tab-flex"}>
                     <div className={"rounded-feature-picture"}>
-                      <img sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 42vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defc_Group%2520238094%2520(3)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defc_Group%20238094%20(3).webp 592w"} alt={""} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defc_Group%20238094%20(3).webp"} loading={"eager"} className={"rounded-feature-img"} />
+                      <img src={"/images/brand/accra-electronics-workshop-zeal-33920035.jpg"} alt={"Students building connected electronics during an Accra technology workshop"} loading={"lazy"} className={"rounded-feature-img"} />
                     </div>
                     <div className={"info-feature-desc container"}>
                       <h3 className={"is-space-24 is-md-space-16 is-h2-mobile"}>
@@ -688,7 +688,7 @@ function ProductsDirectory() {
                       </div>
                     </div>
                     <div className={"rounded-feature-picture full-image"}>
-                      <img sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 43vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defb_Rectangle%2520674%2520(5)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defb_Rectangle%2520674%2520(5)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defb_Rectangle%2520674%2520(5)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defb_Rectangle%20674%20(5).webp 1184w"} alt={""} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70defb_Rectangle%20674%20(5).webp"} loading={"eager"} className={"rounded-feature-img"} />
+                      <img src={"/images/brand/industrial-automation-freek-wolsink-34222005.jpg"} alt={"Automated industrial operations on a production line"} loading={"lazy"} className={"rounded-feature-img"} />
                     </div>
                   </div>
                 </div>
@@ -715,7 +715,7 @@ function ProductsDirectory() {
                         <nav id={"w-dropdown-list-1"} className={"drop-sub _1 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df12_Rectangle%20695%20(2).webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/accra-stem-class-zeal-33920052.jpg"} alt={"Connected electronics being assembled during an Accra technology class"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Sensor networks"}
@@ -744,7 +744,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _2 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df03_Rectangle%20695-1.webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/accra-business-district-kwaku-37304183.jpg"} alt={"Modern commercial building infrastructure in Accra"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Smart buildings"}
@@ -773,7 +773,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _3 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df04_Rectangle%20695-2.webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/secure-access-man-susanne-plank-13657444.jpg"} alt={"Secure access card being presented to an authentication reader"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Access control"}
@@ -802,7 +802,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _4 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df0c_Rectangle%20695-3.webp"} alt={""} className={"target-img _4"} />
+                              <img loading={"lazy"} src={"/images/brand/secure-access-woman-susanne-plank-13657415.jpg"} alt={"Employee identity card being presented to an access reader"} className={"target-img _4"} />
                               <h3>
                                 <strong>
                                   {"Identity cards"}
@@ -831,7 +831,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _5 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df0d_Rectangle%20695-4.webp"} alt={""} className={"target-img _4"} />
+                              <img loading={"lazy"} src={"/images/brand/secure-access-woman-susanne-plank-13657415.jpg"} alt={"Identity card used for secure workplace authentication"} className={"target-img _4"} />
                               <h3>
                                 <strong>
                                   {"Secure authentication"}
@@ -860,7 +860,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _5 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df0d_Rectangle%20695-4.webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/industrial-automation-freek-wolsink-34222005.jpg"} alt={"Industrial technology and equipment in operation"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Industrial IoT"}
@@ -889,7 +889,7 @@ function ProductsDirectory() {
                         <nav className={"drop-sub _5 w-dropdown-list"}>
                           <div className={"drop-wrap"}>
                             <div className={"flex-target"}>
-                              <img loading={"eager"} src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df0d_Rectangle%20695-4.webp"} alt={""} className={"target-img"} />
+                              <img loading={"lazy"} src={"/images/brand/training-accra-zeal-creative-33920044.jpg"} alt={"Technology professionals receiving practical support in Accra"} className={"target-img"} />
                               <h3>
                                 <strong>
                                   {"Rollout support"}

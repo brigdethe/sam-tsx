@@ -35,7 +35,7 @@ function RetailBrokersHero() {
         <div className={"hero-media"} aria-hidden={"true"}>
           <img
             className={"hero-media__image"}
-            src={"https://ik.imagekit.io/fqsfbn5ad/maddymedia/images.jpg"}
+            src={"/images/brand/accra-laptop-seth-tetteh-18188382.jpg"}
             alt={""}
             loading={"eager"}
           />
@@ -105,7 +105,7 @@ function RetailBrokersHero() {
             </div>
           </div>
         </div>
-        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%20Flow_%20(retail%20brokers).webp"} loading={"lazy"} sizes={"100vw"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-2000.webp 2000w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-2600.webp 2600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%20Flow_%20(retail%20brokers).webp 2880w"} alt={""} className={"kv_markets"} />
+        <div className={"maddy-section-backdrop"} aria-hidden={"true"} />
       </section>
     </div>
   )
@@ -118,7 +118,7 @@ function RetailBrokersFeatures() {
         <div className={"w-layout-blockcontainer container market-container w-container"}>
           <div className={"info-feature-flex"}>
             <div className={"rounded-feature-picture"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de94_Group%20238170%20(1).jpg"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de94_Group%2520238170%2520(1)-p-500.jpg 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de94_Group%2520238170%2520(1)-p-800.jpg 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de94_Group%20238170%20(1).jpg 1184w"} alt={""} className={"rounded-feature-img"} />
+              <img src={"/images/brand/cyber-workstation-cottonbro-8720270.jpg"} loading={"lazy"} alt={"Cybersecurity workstation running technical monitoring tools"} className={"rounded-feature-img"} />
             </div>
             <div className={"info-feature-desc"}>
               <h3 className={"is-space-24 is-md-space-16"}>
@@ -202,12 +202,12 @@ function RetailBrokersFeatures() {
               </div>
             </div>
             <div className={"rounded-feature-picture"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de96_Rectangle%20674%20(1).jpg"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de96_Rectangle%2520674%2520(1)-p-500.jpg 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de96_Rectangle%2520674%2520(1)-p-800.jpg 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de96_Rectangle%20674%20(1).jpg 1184w"} alt={""} className={"rounded-feature-img"} />
+              <img src={"/images/brand/accra-stem-team-zeal-33920053.jpg"} loading={"lazy"} alt={"Technology students collaborating on an electronics project in Accra"} className={"rounded-feature-img"} />
             </div>
           </div>
           <div className={"info-feature-flex last-flex"}>
             <div className={"rounded-feature-picture"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de95_Group%20238106%20(1).jpg"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de95_Group%2520238106%2520(1)-p-500.jpg 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de95_Group%2520238106%2520(1)-p-800.jpg 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de95_Group%20238106%20(1).jpg 1184w"} alt={""} className={"rounded-feature-img"} />
+              <img src={"/images/brand/secure-access-man-susanne-plank-13657444.jpg"} loading={"lazy"} alt={"Secure access card being presented to an authentication reader"} className={"rounded-feature-img"} />
             </div>
             <div className={"info-feature-desc"}>
               <h3 className={"is-space-24"}>

@@ -54,11 +54,13 @@ function CarriersHero() {
         </div>
         <div>
           <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9e_hero_bg.svg"} loading={"lazy"} alt={""} className={"mask-video-hero"} />
-          <div data-poster-url={"https://cdn.prod.website-files.com/660bf8fee4119100edb95de5/661ebd91360255f8a9ebf561_-4896-4292-b360-6e3cbd1d3d52-poster-00001.jpg"} data-video-urls={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.mp4,https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.webm"} data-autoplay={"true"} data-loop={"true"} data-wf-ignore={"true"} className={"tab-bg-video-hero w-background-video w-background-video-atom"}>
-            <video id={"da1ec657-de6f-b856-c9ec-75a281c295e6-video"} autoPlay loop style={{ backgroundImage: "url(\"https://cdn.prod.website-files.com/660bf8fee4119100edb95de5/661ebd91360255f8a9ebf561_-4896-4292-b360-6e3cbd1d3d52-poster-00001.jpg\")" }} muted playsInline data-wf-ignore={"true"} data-object-fit={"cover"}>
-              <source src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.mp4"} data-wf-ignore={"true"} />
-              <source src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.webm"} data-wf-ignore={"true"} />
-            </video>
+          <div className={"tab-bg-video-hero maddy-image-frame"}>
+            <img
+              src={"/images/brand/accra-professional-laptop-zeal-35372208.jpg"}
+              loading={"eager"}
+              alt={"Technology professional working on a laptop in Accra"}
+              className={"maddy-cover-image"}
+            />
           </div>
         </div>
       </section>
@@ -99,7 +101,7 @@ function CarriersHero() {
             </div>
           </div>
         </div>
-        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%20Flow_%20(retail%20brokers).webp"} loading={"lazy"} sizes={"100vw"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-2000.webp 2000w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%2520Flow_%2520(retail%2520brokers)-p-2600.webp 2600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de78_Why%20Flow_%20(retail%20brokers).webp 2880w"} alt={""} className={"kv_markets"} />
+        <div className={"maddy-section-backdrop"} aria-hidden={"true"} />
       </section>
       <section className={"section is-markets-logos hide"}>
         <div data-w-id={"700514c9-05ab-d5ee-63c4-eca1f74eeaaf"} className={"w-layout-blockcontainer container is-z-index-2 w-container"}>
@@ -160,7 +162,7 @@ function CarriersFeatures() {
         <div className={"w-layout-blockcontainer container market-container w-container"}>
           <div className={"info-feature-flex"}>
             <div className={"rounded-feature-picture"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9b_Rectangle%20674%20(2).webp"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9b_Rectangle%2520674%2520(2)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9b_Rectangle%2520674%2520(2)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9b_Rectangle%2520674%2520(2)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9b_Rectangle%20674%20(2).webp 1184w"} alt={""} className={"rounded-feature-img"} />
+              <img src={"/images/brand/developer-woman-christina-morillo-1181359.jpg"} loading={"lazy"} alt={"Software developer writing and reviewing application code"} className={"rounded-feature-img"} />
             </div>
             <div className={"info-feature-desc"}>
               <h3 className={"is-space-24 is-md-space-16"}>
@@ -209,12 +211,12 @@ function CarriersFeatures() {
               </div>
             </div>
             <div className={"rounded-feature-picture"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df00_Group%20238184.webp"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df00_Group%2520238184-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df00_Group%2520238184-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df00_Group%2520238184-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df00_Group%20238184.webp 1184w"} alt={""} className={"rounded-feature-img contain-img"} />
+              <img src={"/images/brand/software-collaboration-mizuno-k-12899191.jpg"} loading={"lazy"} alt={"Developers reviewing code together"} className={"rounded-feature-img"} />
             </div>
           </div>
           <div className={"info-feature-flex last-flex"}>
             <div className={"rounded-feature-picture"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70deff_Group%20238107.webp"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70deff_Group%2520238107-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70deff_Group%2520238107-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70deff_Group%2520238107-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70deff_Group%20238107.webp 1184w"} alt={""} className={"rounded-feature-img"} />
+              <img src={"/images/brand/accra-tech-mentoring-zeal-33920051.jpg"} loading={"lazy"} alt={"Students receiving hands-on technology mentoring in Accra"} className={"rounded-feature-img"} />
             </div>
             <div className={"info-feature-desc"}>
               <h3 className={"is-space-24"}>

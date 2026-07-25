@@ -35,7 +35,7 @@ function AboutHero() {
         <div className={"hero-media"} aria-hidden={"true"}>
           <img
             className={"hero-media__image"}
-            src={"https://ik.imagekit.io/fqsfbn5ad/maddymedia/natalie-pedigo-wJK9eTiEZHY-unsplash.jpg"}
+            src={"/images/brand/accra-skyline-prince-enos-31781975.jpg"}
             alt={""}
             loading={"eager"}
           />
@@ -95,7 +95,7 @@ function AboutHero() {
             </div>
           </div>
         </div>
-        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dea3_Frame%20630265504.webp"} loading={"lazy"} sizes={"100vw"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dea3_Frame%2520630265504-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dea3_Frame%2520630265504-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dea3_Frame%2520630265504-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dea3_Frame%2520630265504-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dea3_Frame%20630265504.webp 2880w"} alt={""} className={"kv_about"} />
+        <div className={"maddy-section-backdrop"} aria-hidden={"true"} />
       </section>
     </div>
   )
@@ -108,8 +108,7 @@ function AboutDetails() {
         <div className={"w-layout-blockcontainer container market-container w-container"}>
           <div className={"info-feature-flex last-flex"}>
             <div className={"rounded-feature-picture about-logo"}>
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df02_Group%20238094%20(4).webp"} loading={"lazy"} sizes={"(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 88vw, (max-width: 1439px) 41vw, 592px"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df02_Group%2520238094%2520(4)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df02_Group%2520238094%2520(4)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df02_Group%2520238094%2520(4)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70df02_Group%20238094%20(4).webp 1184w"} alt={""} className={"rounded-feature-img"} />
-              <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70debd_app%20icons.webp"} loading={"lazy"} alt={""} className={"logo-on-image-feature"} />
+              <img src={"/images/brand/accra-stem-team-zeal-33920053.jpg"} loading={"lazy"} alt={"Young technology students collaborating on an electronics project in Accra"} className={"rounded-feature-img"} />
             </div>
             <div className={"info-feature-desc"}>
               <h3 className={"is-space-24 is-md-space-16 is-h2-mobile"}>
@@ -454,7 +453,7 @@ function AboutDetails() {
             </div>
           </div>
         </div>
-        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec1_Frame%20630265505.webp"} loading={"lazy"} sizes={"100vw"} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec1_Frame%2520630265505-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec1_Frame%2520630265505-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec1_Frame%2520630265505-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec1_Frame%2520630265505-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70dec1_Frame%20630265505.webp 2880w"} alt={""} className={"image"} />
+        <img src={"/images/brand/accra-business-district-kwaku-37304183.jpg"} loading={"lazy"} alt={""} className={"image maddy-background-image"} />
       </section>
     </div>
   )

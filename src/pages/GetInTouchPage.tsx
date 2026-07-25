@@ -182,7 +182,7 @@ function GetInTouchContent() {
             </div>
           </div>
         </section>
-        <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%20(1).webp"} loading={"eager"} data-w-id={"850cdf28-50b2-a4dc-dddb-3c8bb97ffb23"} sizes={"(max-width: 767px) 100vw, (max-width: 2966px) 89vw, 2640px"} alt={""} srcSet={"https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%2520(1)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%2520(1)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%2520(1)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%2520(1)-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%2520(1)-p-2000.webp 2000w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de6c_Layer_1%20(1).webp 2640w"} className={"kv_get-in-touch"} />
+        <img src={"/images/brand/accra-contact-prince-enos-31782030.jpg"} loading={"eager"} data-w-id={"850cdf28-50b2-a4dc-dddb-3c8bb97ffb23"} alt={""} className={"kv_get-in-touch maddy-background-image"} />
       </div>
       <div className={"page-wrapper is-overflow-hidden is-no-padding"}>
         <Footer brand="maddy" />

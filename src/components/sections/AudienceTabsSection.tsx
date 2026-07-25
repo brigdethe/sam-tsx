@@ -67,11 +67,13 @@ export function AudienceTabsSection() {
                     </p>
                   </div>
                 </div>
-                <div data-poster-url="https://cdn.prod.website-files.com/660bf8fee4119100edb95de5/660d803657c4f1903322ff72_-52a9-4ff1-b498-d524e6e5ed50-poster-00001.jpg" data-video-urls="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de2c_-52a9-4ff1-b498-d524e6e5ed50-transcode.mp4,https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de2c_-52a9-4ff1-b498-d524e6e5ed50-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" className="tab-bg-video w-background-video w-background-video-atom">
-                  <video id="280b24b0-28e5-3e68-008c-4e5d058f2282-video" autoPlay={true} loop={true} style={{ "backgroundImage": "url(\"https://cdn.prod.website-files.com/660bf8fee4119100edb95de5/660d803657c4f1903322ff72_-52a9-4ff1-b498-d524e6e5ed50-poster-00001.jpg\")" }} muted={true} playsInline={true} data-wf-ignore="true" data-object-fit="cover">
-                    <source src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de2c_-52a9-4ff1-b498-d524e6e5ed50-transcode.mp4" data-wf-ignore="true"/>
-                    <source src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de2c_-52a9-4ff1-b498-d524e6e5ed50-transcode.webm" data-wf-ignore="true"/>
-                  </video>
+                <div className="tab-bg-video maddy-image-frame">
+                  <img
+                    src="/images/brand/server-rack-panumas-17489156.jpg"
+                    loading="lazy"
+                    alt="Security engineer monitoring data-centre infrastructure"
+                    className="maddy-cover-image"
+                  />
                 </div>
                 <div>
                   <img loading="lazy" src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de33_box%20(2).svg" alt="" className="vector-blur-tab-1"/>
@@ -132,11 +134,13 @@ export function AudienceTabsSection() {
                     </p>
                   </div>
                 </div>
-                <div data-poster-url="https://cdn.prod.website-files.com/660bf8fee4119100edb95de5/661ebd91360255f8a9ebf561_-4896-4292-b360-6e3cbd1d3d52-poster-00001.jpg" data-video-urls="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.mp4,https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" className="tab-bg-video w-background-video w-background-video-atom">
-                  <video id="3b39e873-b9db-1850-fceb-88a9f09d9694-video" autoPlay={true} loop={true} style={{ "backgroundImage": "url(\"https://cdn.prod.website-files.com/660bf8fee4119100edb95de5/661ebd91360255f8a9ebf561_-4896-4292-b360-6e3cbd1d3d52-poster-00001.jpg\")" }} muted={true} playsInline={true} data-wf-ignore="true" data-object-fit="cover">
-                    <source src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.mp4" data-wf-ignore="true"/>
-                    <source src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9d_-4896-4292-b360-6e3cbd1d3d52-transcode.webm" data-wf-ignore="true"/>
-                  </video>
+                <div className="tab-bg-video maddy-image-frame">
+                  <img
+                    src="/images/brand/remote-coding-thisisengineering-3861964.jpg"
+                    loading="lazy"
+                    alt="Software developer building applications at a multi-screen workstation"
+                    className="maddy-cover-image"
+                  />
                 </div>
                 <div>
                   <img loading="lazy" src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de33_box%20(2).svg" alt="" className="vector-blur-tab-1"/>
