@@ -77,8 +77,12 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
                 <img src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70ddfa_arrow-top-right%201.svg" loading="lazy" alt="" className="button-arrow inversed"/>
               </ButtonLink>
             </nav>
-            <div className="menu-button w-nav-button">
-              <img src="https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de51_menu-8%201.svg" loading="lazy" alt="" className="hamburger"/>
+            <div className="menu-button w-nav-button" aria-label="Menu">
+              <span className="hamburger" aria-hidden="true">
+                <span className="hamburger-line"></span>
+                <span className="hamburger-line"></span>
+                <span className="hamburger-line"></span>
+              </span>
             </div>
             <ButtonLink href="/get-in-touch" aria-current={isCurrent('/get-in-touch') ? 'page' : undefined} className={currentLinkClass('is-white-button is-navbar-button w-inline-block', '/get-in-touch', currentPath)}>
               <p>
