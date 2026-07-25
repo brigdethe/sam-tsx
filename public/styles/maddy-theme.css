@@ -346,17 +346,85 @@ html.is-page-loading {
   }
 }
 
-/* Technologies dropdown: room for the expanded service list */
+/* Technologies dropdown (desktop): under the toggle, left-aligned (kill Webflow 8rem pad) */
 @media screen and (min-width: 992px) {
-  .navbar .dropdown-list.w-dropdown-list {
+  .navbar-wrap,
+  .navbar.w-nav,
+  .container.nav-flex,
+  .nav-menu.w-nav-menu {
+    overflow: visible !important;
+  }
+
+  .navbar .dropdown.w-dropdown {
+    position: relative !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .dropdown-list.w-dropdown-list,
+  .navbar .dropdown-list.w-dropdown-list.w--open {
+    position: absolute !important;
+    /* Flush under toggle; padding is the hover bridge into the panel */
+    top: 100% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate3d(-50%, 0, 0) !important;
+    padding: 0.5rem 0 0 !important;
+    margin: 0 !important;
+    min-width: 16rem;
+    width: max-content;
+    max-width: min(20rem, calc(100vw - 2rem));
     max-height: min(70vh, 28rem);
-    overflow-y: auto;
+    overflow: visible;
+    background: transparent !important;
+    box-shadow: none !important;
+    z-index: 5100;
   }
 
   .navbar .navbar-dropdown-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
-    min-width: 14rem;
+    align-items: stretch;
+    gap: 0.1rem;
+    min-width: 16rem;
+    max-height: min(70vh, 27rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 !important;
+    padding: 0.6rem 0.45rem !important;
+    text-align: left;
+    background-color: #fff !important;
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
   }
+
+  .navbar .dropdown-link,
+  .navbar .dropdown-link.navbar-dl-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    padding: 0.65rem 0.95rem !important;
+    white-space: nowrap;
+  }
+
+  .navbar .arrow-icon.drop {
+    transition: transform 0.28s ease;
+  }
+
+  .navbar .dropdown.w--open .arrow-icon.drop,
+  .navbar .w-dropdown-toggle.w--open .arrow-icon.drop {
+    transform: rotate(180deg);
+  }
+}
+
+/* Technologies submenu: no hover flash/animation */
+.navbar .dropdown-link.navbar-dl-link,
+.navbar .dropdown-link.navbar-dl-link:hover,
+.navbar .dropdown-link.navbar-dl-link:focus {
+  background-color: transparent !important;
+  transition: none !important;
 }

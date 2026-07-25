@@ -34,7 +34,7 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
               <a href="/products-appetite" aria-current={isCurrent('/products-appetite') ? 'page' : undefined} className={currentLinkClass('nav-link w-nav-link', '/products-appetite', currentPath)}>
                 {isMaddy ? "Services" : "Products & Appetite"}
               </a>
-              <div data-hover="true" data-delay="0" className="dropdown w-dropdown">
+              <div data-hover="true" data-delay="200" className="dropdown w-dropdown">
                 <div className={`nav-link is-dropdown w-dropdown-toggle${technologyActive ? ' w--current' : ''}`}>
                   <div>
                     {isMaddy ? "Technologies" : "Why Flow?"}
