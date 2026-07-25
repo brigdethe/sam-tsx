@@ -56,9 +56,9 @@ function CarriersHero() {
           <img src={"https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de9e_hero_bg.svg"} loading={"lazy"} alt={""} className={"mask-video-hero"} />
           <div className={"tab-bg-video-hero maddy-image-frame"}>
             <img
-              src={"/images/brand/accra-professional-laptop-zeal-35372208.jpg"}
+              src={"/images/brand/accra-ecobank-tower.jpg"}
               loading={"eager"}
-              alt={"Technology professional working on a laptop in Accra"}
+              alt={"Ecobank tower rising above Accra"}
               className={"maddy-cover-image"}
             />
           </div>

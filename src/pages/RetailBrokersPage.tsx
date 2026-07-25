@@ -35,7 +35,7 @@ function RetailBrokersHero() {
         <div className={"hero-media"} aria-hidden={"true"}>
           <img
             className={"hero-media__image"}
-            src={"/images/brand/accra-laptop-seth-tetteh-18188382.jpg"}
+            src={"/images/brand/accra-spintex-skyline-storm.jpg"}
             alt={""}
             loading={"eager"}
           />
