@@ -356,7 +356,7 @@ function ProductsDirectory() {
                     </div>
                   </div>
                 </div>
-                <div className={'section is-target-section'}>
+                <div className={'section is-target-section focus-areas'}>
                   <img
                     sizes={'100vw'}
                     srcSet={
@@ -398,12 +398,6 @@ function ProductsDirectory() {
                           <nav id={'w-dropdown-list-1'} className={'drop-sub _1 w-dropdown-list'}>
                             <div className={'drop-wrap'}>
                               <div className={'flex-target'}>
-                                <img
-                                  loading={'lazy'}
-                                  src={'/images/brand/network-cables-brett-sayles-1597776.jpg'}
-                                  alt={'Secured network connections in data-centre infrastructure'}
-                                  className={'target-img'}
-                                />
                                 <h3>{'Testing & assessments'}</h3>
                               </div>
                               <p>
@@ -439,12 +433,6 @@ function ProductsDirectory() {
                           <nav className={'drop-sub is-bottom-2-mobile w-dropdown-list'}>
                             <div className={'drop-wrap'}>
                               <div className={'flex-target'}>
-                                <img
-                                  loading={'lazy'}
-                                  src={'/images/brand/server-rack-panumas-17489156.jpg'}
-                                  alt={'Protected server infrastructure in a modern data centre'}
-                                  className={'target-img'}
-                                />
                                 <h3>{'Managed detection'}</h3>
                               </div>
                               <p>
@@ -480,12 +468,6 @@ function ProductsDirectory() {
                           <nav className={'drop-sub _3 w-dropdown-list'}>
                             <div className={'drop-wrap'}>
                               <div className={'flex-target'}>
-                                <img
-                                  loading={'lazy'}
-                                  src={'/images/brand/smart-card-susanne-plank-13657375.jpg'}
-                                  alt={'Access card being presented to a secure reader'}
-                                  className={'target-img'}
-                                />
                                 <h3>{'Identity & access'}</h3>
                               </div>
                               <p>
@@ -521,14 +503,6 @@ function ProductsDirectory() {
                           <nav className={'drop-sub _4 w-dropdown-list'}>
                             <div className={'drop-wrap'}>
                               <div className={'flex-target'}>
-                                <img
-                                  loading={'lazy'}
-                                  src={
-                                    '/images/brand/accra-modern-architecture-larry-dre-7066315.jpg'
-                                  }
-                                  alt={'Modern connected business infrastructure in Accra'}
-                                  className={'target-img _4'}
-                                />
                                 <h3>{'Cloud & email security'}</h3>
                               </div>
                               <p>
@@ -564,12 +538,6 @@ function ProductsDirectory() {
                           <nav className={'drop-sub _5 w-dropdown-list'}>
                             <div className={'drop-wrap'}>
                               <div className={'flex-target'}>
-                                <img
-                                  loading={'lazy'}
-                                  src={'/images/brand/accra-stem-class-zeal-33920052.jpg'}
-                                  alt={'Students developing practical technology skills in Accra'}
-                                  className={'target-img _4'}
-                                />
                                 <h3>{'Governance & training'}</h3>
                               </div>
                               <p>
@@ -799,7 +767,7 @@ function ProductsDirectory() {
                   </div>
                 </div>
               </div>
-              <div className={'section is-target-section'}>
+              <div className={'section is-target-section engagement-types'}>
                 <img
                   sizes={'100vw'}
                   srcSet={
@@ -841,12 +809,6 @@ function ProductsDirectory() {
                         <nav id={'w-dropdown-list-1'} className={'drop-sub _1 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/coding-laptop-cottonbro-5483075.jpg'}
-                                alt={'Application code being developed on a laptop'}
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Custom applications'}</strong>
                               </h3>
@@ -884,14 +846,7 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _2 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/remote-coding-thisisengineering-3861964.jpg'}
-                                alt={
-                                  'Developer collaborating remotely while writing application code'
-                                }
-                                className={'target-img'}
-                              />
+                              \
                               <h3>
                                 <strong>{'Websites & portals'}</strong>
                               </h3>
@@ -929,12 +884,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _3 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/software-developer-naboth-otieno-19805876.jpg'}
-                                alt={'Software development workstation'}
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Integration & support'}</strong>
                               </h3>
@@ -1159,7 +1108,7 @@ function ProductsDirectory() {
                   </div>
                 </div>
               </div>
-              <div className={'section is-target-section'}>
+              <div className={'section is-target-section use-cases'}>
                 <img
                   sizes={'100vw'}
                   srcSet={
@@ -1201,14 +1150,6 @@ function ProductsDirectory() {
                         <nav id={'w-dropdown-list-1'} className={'drop-sub _1 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/accra-stem-class-zeal-33920052.jpg'}
-                                alt={
-                                  'Connected electronics being assembled during an Accra technology class'
-                                }
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Sensor networks'}</strong>
                               </h3>
@@ -1246,12 +1187,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _2 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/accra-business-district-kwaku-37304183.jpg'}
-                                alt={'Modern commercial building infrastructure in Accra'}
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Smart buildings'}</strong>
                               </h3>
@@ -1289,14 +1224,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _3 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/secure-access-man-susanne-plank-13657444.jpg'}
-                                alt={
-                                  'Secure access card being presented to an authentication reader'
-                                }
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Access control'}</strong>
                               </h3>
@@ -1334,12 +1261,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _4 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/secure-access-woman-susanne-plank-13657415.jpg'}
-                                alt={'Employee identity card being presented to an access reader'}
-                                className={'target-img _4'}
-                              />
                               <h3>
                                 <strong>{'Identity cards'}</strong>
                               </h3>
@@ -1377,12 +1298,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _5 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/secure-access-woman-susanne-plank-13657415.jpg'}
-                                alt={'Identity card used for secure workplace authentication'}
-                                className={'target-img _4'}
-                              />
                               <h3>
                                 <strong>{'Secure authentication'}</strong>
                               </h3>
@@ -1420,14 +1335,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _5 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={
-                                  '/images/brand/industrial-automation-freek-wolsink-34222005.jpg'
-                                }
-                                alt={'Industrial technology and equipment in operation'}
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Industrial IoT'}</strong>
                               </h3>
@@ -1465,14 +1372,6 @@ function ProductsDirectory() {
                         <nav className={'drop-sub _5 w-dropdown-list'}>
                           <div className={'drop-wrap'}>
                             <div className={'flex-target'}>
-                              <img
-                                loading={'lazy'}
-                                src={'/images/brand/training-accra-zeal-creative-33920044.jpg'}
-                                alt={
-                                  'Technology professionals receiving practical support in Accra'
-                                }
-                                className={'target-img'}
-                              />
                               <h3>
                                 <strong>{'Rollout support'}</strong>
                               </h3>
