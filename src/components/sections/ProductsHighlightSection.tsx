@@ -128,7 +128,10 @@ export function ProductsHighlightSection() {
           </div>
         </div>
 
-        <div className="is-text-center" style={{ marginTop: '3rem' }}>
+        <div
+          className="is-text-center"
+          style={{ marginTop: '3rem', marginLeft: '1rem', marginRight: '1rem' }}
+        >
           <a href="/software-products" className="button w-inline-block text-white">
             <p>{'Explore software products'}</p>
             <img

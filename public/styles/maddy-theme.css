@@ -244,10 +244,14 @@
   transform: rotate(180deg);
   white-space: nowrap;
 }
+
 .acc__caption {
   font-size: 12px;
   color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .acc__label {
   font-size: clamp(18px, 3vw, 30px);
   letter-spacing: -0.01em;
@@ -340,7 +344,7 @@
 }
 
 /* ---------- Mobile: stack vertically ---------- */
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   .acc {
     --tab-size: 64px;
     flex-direction: column;
@@ -2516,9 +2520,8 @@ html.is-page-loading {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .product-showcase__intro {
