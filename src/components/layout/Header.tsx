@@ -1,5 +1,5 @@
-import { partnerNavItems } from '../../content/partnerPages.js'
 import { technologyNavItems } from '../../content/technologyNav.js'
+import { partnerNavItems } from '../../pages/partners/content/partnerPages.js'
 import { ArrowFillContent } from '../ui/ArrowFill.js'
 import { ButtonLink } from '../ui/ButtonLink.js'
 
@@ -26,6 +26,11 @@ const activeLinkScrollScript = `(function () {
         top: 0,
         behavior: 'smooth'
       });
+
+      if (!window.matchMedia('(min-width: 992px)').matches) {
+        var menuButton = document.querySelector('.navbar .menu-button.w--open');
+        if (menuButton) menuButton.click();
+      }
     }
   }, true);
 })();`

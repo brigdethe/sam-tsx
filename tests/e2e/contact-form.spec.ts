@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { partnerPageConfigs } from '../../src/content/partnerPages.js'
+import { partnerPageConfigs } from '../../src/pages/partners/content/partnerPages.js'
 import { gotoReady } from './helpers.js'
 
 const partnerPath = partnerPageConfigs[0]!.path

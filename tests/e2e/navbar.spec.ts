@@ -106,4 +106,16 @@ test.describe('navbar on a phone', () => {
   test('the navy logo shows on the white bar', async ({ page }) => {
     await expect(page.locator('.navbar .maddy-logo-dark')).toHaveCSS('opacity', '1')
   })
+
+  test('tapping the current page link closes the menu and scrolls to the top', async ({ page }) => {
+    await gotoReady(page, '/services')
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+    await openMobileMenu(page)
+
+    await page.locator('.nav-menu a[aria-current="page"]').tap()
+
+    await expect(page.locator('.menu-button')).not.toHaveClass(/w--open/)
+    await expect(page.locator('.nav-menu')).toBeHidden()
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+  })
 })

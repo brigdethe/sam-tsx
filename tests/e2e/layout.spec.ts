@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { siteRoutes } from '../../src/sitePages.js'
+import { siteRoutes } from '../../src/app/routes.js'
 import { gotoReady } from './helpers.js'
 
 test.describe('page layout @smoke', () => {

@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
-import { renderDocument } from '../src/renderDocument.js'
-import { siteRoutes } from '../src/sitePages.js'
+import { renderDocument } from '../src/app/renderDocument.js'
+import { siteRoutes } from '../src/app/routes.js'
 
 // Check rendered tags against the exact bytes the browser receives.
 const jquery = readFileSync(new URL('../public/vendor/jquery.js', import.meta.url))

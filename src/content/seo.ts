@@ -1,7 +1,7 @@
-import { leaders } from './leadership.js'
-import { partnerPageConfigs } from './partnerPages.js'
+import { leaders } from '../pages/about-us/content/leadership.js'
+import { partnerPageConfigs } from '../pages/partners/content/partnerPages.js'
+import { technologyPageConfigs } from '../pages/technologies/content/technologyPages.js'
 import { absoluteUrl, site } from './site.js'
-import { technologyPageConfigs } from './technologyPages.js'
 
 type ServiceEntry = { path: string; name: string; description: string }
 

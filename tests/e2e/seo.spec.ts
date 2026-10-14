@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
+import { siteRoutes } from '../../src/app/routes.js'
 import { site } from '../../src/content/site.js'
-import { siteRoutes } from '../../src/sitePages.js'
 
 // Read-only checks of what search engines and AI assistants are given.
 test.describe('search engine tags @smoke', () => {

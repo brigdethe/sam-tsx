@@ -89,6 +89,25 @@
   clip-path: inset(0 round 1.5rem);
 }
 
+@media screen and (max-width: 992px) {
+  .section.is-hero-section,
+  .section.is-why-flow-hero,
+  .section.is-products-hero,
+  .section.is-why-about-hero,
+  .section.is-contact-hero {
+    border-radius: 0;
+  }
+
+  .is-hero-section .hero-media,
+  .is-why-flow-hero .hero-media,
+  .is-products-hero .hero-media,
+  .is-why-about-hero .hero-media,
+  .is-contact-hero .hero-media {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+}
+
 /* The media itself carries the scroll zoom; it is clipped by the frame above. */
 .is-hero-section .hero-media__video,
 .is-hero-section .hero-media__image,
@@ -344,7 +363,7 @@
 }
 
 /* ---------- Mobile: stack vertically ---------- */
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .acc {
     --tab-size: 64px;
     flex-direction: column;
@@ -365,7 +384,7 @@
 
   .acc__tab {
     flex: 0 0 calc(var(--tab-size) - 1px);
-    flex-direction: row-reverse; /* title first, caption after */
+    flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 12px;
     padding: 0 20px;
@@ -2826,7 +2845,7 @@ html.is-page-loading {
 
 @media screen and (min-width: 1440px) {
   .section.is-about-more-section {
-    padding-top: 14rem;
+    padding-top: 15rem;
     padding-bottom: 3rem;
   }
 }

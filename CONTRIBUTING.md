@@ -77,7 +77,7 @@ Tests live in `tests/e2e/`.
 
 - **Read-only tests:** tag them `@smoke` in the `describe` title. These are the ones that run against the live site, so they must not submit forms or change anything.
 - **Page helpers:** use `gotoReady()` from `tests/e2e/helpers.ts` so the test waits for the page loader to finish.
-- **New pages:** pages in `src/sitePages.ts` are picked up automatically by the page and layout tests.
+- **New pages:** pages in `src/app/routes.ts` are picked up automatically by the page and layout tests.
 
 ## Dependencies
 

@@ -7,8 +7,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "start": "node dist/server.js",
+    "dev": "tsx watch src/app/server.ts",
+    "start": "node dist/app/server.js",
     "build": "npm run check:integrity && tsc -p tsconfig.build.json",
     "check:integrity": "tsx scripts/check-script-integrity.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",
@@ -29,7 +29,7 @@
     "@eslint/js": "^9.39.5",
     "@playwright/test": "^1.63.0",
     "@types/express": "^5.0.3",
-    "@types/node": "^24.19.1",
+    "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
