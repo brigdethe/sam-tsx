@@ -1,8 +1,22 @@
 import { createElement, type ComponentType } from 'react'
 import { SamDocument } from './App.js'
+import {
+  categoryPath,
+  securityTechnologies,
+  serviceCategories,
+  servicePages,
+  technologyPath,
+  TECHNOLOGIES_ROOT,
+} from './content/catalog/index.js'
 import { partnerPageConfigs } from './content/partnerPages.js'
 import { technologyPageConfigs } from './content/technologyPages.js'
 import { AboutUsDocument } from './pages/AboutUsPage.js'
+import {
+  SecurityTechnologyDocument,
+  ServiceCategoryDocument,
+  ServiceDetailDocument,
+  TechnologiesHubDocument,
+} from './pages/CatalogPages.js'
 import { CarriersDocument } from './pages/CarriersPage.js'
 import { GetInTouchDocument } from './pages/GetInTouchPage.js'
 import { PrivacyPolicyDocument, TermsOfUseDocument } from './pages/LegalPages.js'
@@ -29,6 +43,35 @@ const partnerDocuments = Object.fromEntries(
   ]),
 ) as Record<string, ComponentType>
 
+/** Practice areas, their sub-services and the security technology pages. */
+const catalogDocuments: Record<string, ComponentType> = {
+  [TECHNOLOGIES_ROOT]: TechnologiesHubDocument,
+  ...Object.fromEntries(
+    serviceCategories.map((category) => [
+      categoryPath(category),
+      function ServiceCategoryPage() {
+        return createElement(ServiceCategoryDocument, { category })
+      },
+    ]),
+  ),
+  ...Object.fromEntries(
+    servicePages.map((page) => [
+      page.path,
+      function ServicePage() {
+        return createElement(ServiceDetailDocument, { page })
+      },
+    ]),
+  ),
+  ...Object.fromEntries(
+    securityTechnologies.map((technology) => [
+      technologyPath(technology),
+      function SecurityTechnologyPage() {
+        return createElement(SecurityTechnologyDocument, { technology })
+      },
+    ]),
+  ),
+}
+
 const pageDocuments: Record<string, ComponentType> = {
   '/': SamDocument,
   '/services': ProductsAppetiteDocument,
@@ -40,6 +83,7 @@ const pageDocuments: Record<string, ComponentType> = {
   '/terms-of-use': TermsOfUseDocument,
   ...technologyDocuments,
   ...partnerDocuments,
+  ...catalogDocuments,
 }
 
 export const siteRoutes = Object.keys(pageDocuments)

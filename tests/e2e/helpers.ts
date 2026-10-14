@@ -8,9 +8,14 @@ export const isDesktop = (testInfo: TestInfo) => testInfo.project.name === 'desk
  */
 export async function gotoReady(page: Page, path: string): Promise<Response | null> {
   const response = await page.goto(path, { waitUntil: 'load' })
-  await page.waitForFunction(() => !document.documentElement.classList.contains('is-page-loading'))
-  const loader = page.locator('.maddy-loader')
-  if (await loader.count()) await expect(loader.first()).toHaveClass(/is-done/)
+  // The loader marks itself done, then removes itself a moment later, so accept
+  // either state in one check (counting it first and then reading its class
+  // raced with the removal and failed at random).
+  await page.waitForFunction(() => {
+    if (document.documentElement.classList.contains('is-page-loading')) return false
+    const loader = document.querySelector('.maddy-loader')
+    return !loader || loader.classList.contains('is-done')
+  })
   return response
 }
 

@@ -42,14 +42,14 @@ test.describe('navbar on desktop', () => {
     await expectOpen(page, 0, true)
   })
 
-  test('a dropdown item fills on hover and navigates on click', async ({ page }) => {
+  test('pointing at a solution shows its technologies; clicking it opens its page', async ({
+    page,
+  }) => {
     await toggle(page, 0).hover()
-    const item = panel(page, 0).locator('a.arrow-fill', { hasText: 'Training' })
+    const item = panel(page, 0).locator('.nav-solution', { hasText: 'Training' })
     await item.hover()
-    await expect(item.locator('.arrow-fill__fill')).toHaveCSS(
-      'background-color',
-      'rgb(77, 81, 171)',
-    )
+    await expect(item).toHaveCSS('background-color', 'rgb(242, 243, 250)')
+    await expect(item).toHaveAttribute('aria-expanded', 'true')
     await item.click()
     await expect(page).toHaveURL(/\/training$/)
   })

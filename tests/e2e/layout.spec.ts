@@ -53,3 +53,21 @@ test.describe('alignment on desktop', () => {
     expect(box!.width / box!.height).toBeCloseTo(33 / 35, 1)
   })
 })
+
+test.describe('no sideways scroll at laptop widths', () => {
+  test.skip(({ isMobile }) => isMobile, 'desktop browser only')
+
+  // The services page used to scroll sideways by 13–81px between 992 and 1439px.
+  for (const width of [1024, 1280]) {
+    for (const route of ['/', '/services', '/technologies', '/services/cloud-security']) {
+      test(`${route} at ${width}px`, async ({ page }) => {
+        await page.setViewportSize({ width, height: 900 })
+        await gotoReady(page, route)
+        const overflow = await page.evaluate(
+          () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        )
+        expect(overflow).toBeLessThanOrEqual(1)
+      })
+    }
+  }
+})

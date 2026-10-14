@@ -1,43 +1,15 @@
-import { Footer } from '../components/layout/Footer.js'
+import {
+  ServiceCtaFooter,
+  ServicePageHead,
+  ServicePageRuntime,
+} from '../components/layout/ServicePageChrome.js'
 import { SiteDocument } from '../components/layout/SiteDocument.js'
-import { SiteIcons } from '../components/layout/SiteIcons.js'
-import { sitePageCode } from '../content/sitePageCode.js'
 import type { TechnologyPageConfig } from '../content/technologyPages.js'
 
 const arrow =
   'https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de77_Group%20(3).svg'
 const featureArrow =
   'https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de97_arrow-top-right%201%20(1).svg'
-
-function PageHead({ config }: { config: TechnologyPageConfig }) {
-  return (
-    <>
-      <meta charSet={'utf-8'} />
-      <link
-        href={'https://assets-global.website-files.com'}
-        rel={'preconnect'}
-        crossOrigin={'anonymous'}
-      />
-      <title>{config.title}</title>
-      <meta content={config.description} name={'description'} />
-      <meta content={config.title} property={'og:title'} />
-      <meta content={config.description} property={'og:description'} />
-      <meta content={config.title} name={'twitter:title'} />
-      <meta content={config.description} name={'twitter:description'} />
-      <meta property={'og:type'} content={'website'} />
-      <meta content={'summary_large_image'} name={'twitter:card'} />
-      <meta content={'width=device-width, initial-scale=1'} name={'viewport'} />
-      <link href={'/styles/webflow.css'} rel={'stylesheet'} type={'text/css'} />
-      <link href={'/styles/maddy-theme.css'} rel={'stylesheet'} type={'text/css'} />
-      <style dangerouslySetInnerHTML={{ __html: sitePageCode.retailBrokers[0] }} />
-      <script
-        type={'text/javascript'}
-        dangerouslySetInnerHTML={{ __html: sitePageCode.retailBrokers[1] }}
-      />
-      <SiteIcons />
-    </>
-  )
-}
 
 function Hero({ config }: { config: TechnologyPageConfig }) {
   return (
@@ -183,99 +155,17 @@ function Features({ config }: { config: TechnologyPageConfig }) {
   )
 }
 
-function FooterArea({ config }: { config: TechnologyPageConfig }) {
-  return (
-    <div className={'page-wrapper is-overflow-hidden is-no-padding'}>
-      <section className={'section is-cta-section'}>
-        <div className={'w-layout-blockcontainer container is-relative is-z-index-2 w-container'}>
-          <div className={'cta-copy'}>
-            <div>
-              <h3
-                data-w-id={'0789e90d-14d7-de60-3e7d-d2524d2e4fa3'}
-                className={'is-color-lime-300'}
-              >
-                {config.ctaAccent}
-              </h3>
-              <h3 data-w-id={'6f019d19-8439-ebb1-03aa-e83ff562296c'}>{config.ctaRest}</h3>
-              <p className={'cta-sub'}>{config.ctaBody}</p>
-            </div>
-            <a
-              data-w-id={'6f019d19-8439-ebb1-03aa-e83ff5622970'}
-              href={'/get-in-touch'}
-              className={'button is-black-button w-inline-block'}
-            >
-              <p>{'Request a quote'}</p>
-              <img
-                src={
-                  'https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70ddfa_arrow-top-right%201.svg'
-                }
-                loading={'lazy'}
-                alt={''}
-                className={'button-arrow inversed'}
-              />
-            </a>
-          </div>
-        </div>
-        <div data-w-id={'6f019d19-8439-ebb1-03aa-e83ff5622974'} className={'kv-footer'}>
-          <img
-            src={
-              'https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de68_Vector%20(4).webp'
-            }
-            loading={'lazy'}
-            sizes={'100vw'}
-            srcSet={
-              'https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de68_Vector%2520(4)-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de68_Vector%2520(4)-p-800.webp 800w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de68_Vector%2520(4)-p-1080.webp 1080w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de68_Vector%2520(4)-p-1600.webp 1600w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de68_Vector%20(4).webp 2880w'
-            }
-            alt={''}
-            className={'kv-footer-desktop'}
-          />
-          <img
-            src={
-              'https://cdn.prod.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de69_Layer_1.webp'
-            }
-            loading={'lazy'}
-            sizes={'(max-width: 767px) 100vw, 750px'}
-            srcSet={
-              'https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de69_Layer_1-p-500.webp 500w, https://assets-global.website-files.com/6627b50ad2ace3686c70dd7b/6627b50ad2ace3686c70de69_Layer_1.webp 750w'
-            }
-            alt={''}
-            className={'kv-footer-mobile'}
-          />
-        </div>
-      </section>
-      <Footer />
-    </div>
-  )
-}
-
-function PageRuntime() {
-  return (
-    <>
-      <script
-        src={'/vendor/jquery.js'}
-        type={'text/javascript'}
-        integrity={'sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0='}
-        crossOrigin={'anonymous'}
-      ></script>
-      <script src={'/vendor/webflow.js'} type={'text/javascript'}></script>
-      <script dangerouslySetInnerHTML={{ __html: sitePageCode.retailBrokers[2] }} />
-      <script dangerouslySetInnerHTML={{ __html: sitePageCode.retailBrokers[3] }} />
-      <script dangerouslySetInnerHTML={{ __html: sitePageCode.retailBrokers[4] }} />
-    </>
-  )
-}
-
 export function TechnologyServiceDocument({ config }: { config: TechnologyPageConfig }) {
   return (
     <SiteDocument
       currentPath={config.path}
       pageId={config.pageId}
-      head={<PageHead config={config} />}
-      runtime={<PageRuntime />}
+      head={<ServicePageHead title={config.title} description={config.description} />}
+      runtime={<ServicePageRuntime />}
     >
       <Hero config={config} />
       <Features config={config} />
-      <FooterArea config={config} />
+      <ServiceCtaFooter accent={config.ctaAccent} rest={config.ctaRest} body={config.ctaBody} />
     </SiteDocument>
   )
 }

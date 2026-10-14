@@ -1,6 +1,7 @@
 import { Footer } from '../components/layout/Footer.js'
 import { SiteDocument } from '../components/layout/SiteDocument.js'
 import { SiteIcons } from '../components/layout/SiteIcons.js'
+import { ServiceCoverageGrid } from '../components/sections/ServiceCoverageGrid.js'
 import { sitePageCode } from '../content/sitePageCode.js'
 
 function PageHead() {
@@ -586,91 +587,15 @@ function ProductsDirectory() {
                 </div>
                 <div className={'section is-coverages-section'}>
                   <div className={'w-layout-blockcontainer container w-container'}>
-                    <div className={'coverages-flex'}>
+                    <div className={'coverages-flex svc-coverage-head'}>
                       <h2>{'What we deliver'}</h2>
+                      <p className={'is-font-size-body-m'}>
+                        {
+                          'Thirteen practice areas, from the security operations centre to the board room. Choose a service to see what it covers and what you receive.'
+                        }
+                      </p>
                     </div>
-                    <div className={'coverages-grid'}>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'Penetration testing'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'On-demand and continuous testing options (including PTaaS) that show real exploitable paths, not only scanner noise.'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'Managed SOC'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            '24/7 monitoring, vulnerability management and monthly reporting for teams that need continuous detection.'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'Red teaming'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'Adversary-style exercises and breach-and-attack simulation to test people, process and controls together.'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'Incident response'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'Structured response support when an incident lands, with clear next steps for containment and recovery.'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'Phishing simulation'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'Practical phishing exercises that show how staff respond under pressure, then turn the gaps into training.'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'CISO as a service'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'Fractional security leadership for organisations that need direction, priorities and board-ready reporting.'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'Data & privacy'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'Guidance aligned to the Ghana Data Protection Act (Act 843), GDPR expectations where relevant, and the Cyber Security Act, 2020 (Act 1038).'
-                          }
-                        </p>
-                      </div>
-                      <div className={'coverage'}>
-                        <div className={'is-font-size-title-l is-color-purple-500 f-coverage'}>
-                          {'OT and compliance'}
-                        </div>
-                        <p className={'is-font-size-body-m'}>
-                          {
-                            'Support for OT and ICS assessments, insider threat work and compliance programmes when your environment needs more than a standard web stack review.'
-                          }
-                        </p>
-                      </div>
-                    </div>
+                    <ServiceCoverageGrid />
                   </div>
                 </div>
               </div>

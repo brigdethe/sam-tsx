@@ -1,3 +1,4 @@
+import { categoryPath, serviceCategories } from '../../content/catalog/index.js'
 import { site } from '../../content/site.js'
 import { technologyNavItems } from '../../content/technologyNav.js'
 
@@ -23,6 +24,25 @@ const socialLinks = [
     href: '#',
     path: 'M21.58 7.19a2.51 2.51 0 0 0-1.77-1.78C18.25 5 12 5 12 5s-6.25 0-7.81.41c-.86.23-1.54.91-1.77 1.78C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.87.91 1.55 1.77 1.78C5.75 19 12 19 12 19s6.25 0 7.81-.41a2.51 2.51 0 0 0 1.77-1.78C22 15.25 22 12 22 12s0-3.25-.42-4.81ZM10 15.02V8.98L15.2 12 10 15.02Z',
   },
+]
+
+/** The practice areas people look for most, then the full list. */
+const footerAreaSlugs = [
+  'enhanced-soc-services',
+  'cloud-security',
+  'incident-response-threat-intelligence',
+  'identity-access-management',
+  'red-teaming',
+  'governance-risk-compliance',
+]
+const cybersecurityLinks = [
+  ...footerAreaSlugs.flatMap((slug) => {
+    const category = serviceCategories.find((item) => item.slug === slug)
+    return category
+      ? [{ href: categoryPath(category), label: category.name.replace(/ \(.*\)$/, '') }]
+      : []
+  }),
+  { href: '/technologies', label: 'All technologies' },
 ]
 
 const companyLinks = [
@@ -98,7 +118,7 @@ export function Footer() {
           />
         </div>
         <div className="mf__inner">
-          <div className="mf__grid">
+          <div className="mf__grid mf__grid--wide">
             <div className="mf__brand">
               <img
                 src="/images/maddy-group-horizontal-white.png"
@@ -112,8 +132,21 @@ export function Footer() {
               </p>
             </div>
 
-            <nav className="mf__col" aria-label="Services">
-              <h2 className="mf__heading">{'Services'}</h2>
+            <nav className="mf__col" aria-label="Cybersecurity">
+              <h2 className="mf__heading">{'Cybersecurity'}</h2>
+              <ul className="mf__list">
+                {cybersecurityLinks.map((item) => (
+                  <li key={item.href}>
+                    <a href={item.href} className="mf__link">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav className="mf__col" aria-label="Solutions">
+              <h2 className="mf__heading">{'Solutions'}</h2>
               <ul className="mf__list">
                 {technologyNavItems.map((item) => (
                   <li key={item.href}>

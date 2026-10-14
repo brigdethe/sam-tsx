@@ -1,4 +1,15 @@
+import {
+  SERVICES_ROOT,
+  TECHNOLOGIES_ROOT,
+  categoryPath,
+  findServicePage,
+  securityTechnologies,
+  serviceCategories,
+  servicePages,
+  technologyPath,
+} from './catalog/index.js'
 import { leaders } from './leadership.js'
+import { parentSolution } from './technologyNav.js'
 import { partnerPageConfigs } from './partnerPages.js'
 import { absoluteUrl, site } from './site.js'
 import { technologyPageConfigs } from './technologyPages.js'
@@ -31,7 +42,30 @@ export const serviceEntries: ServiceEntry[] = [
     name: pageName(config.title),
     description: config.description,
   })),
+  ...serviceCategories.map((category) => ({
+    path: categoryPath(category),
+    name: category.name,
+    description: category.heroBody,
+  })),
 ]
+
+/** Sub-service and technology pages: described individually, but kept out of the company-wide catalogue. */
+const catalogEntries: ServiceEntry[] = [
+  ...servicePages.map((page) => ({
+    path: page.path,
+    name: page.service.name,
+    description: page.service.heroBody,
+  })),
+  ...securityTechnologies.map((technology) => ({
+    path: technologyPath(technology),
+    name: technology.name,
+    description: technology.heroBody,
+  })),
+]
+
+const entryByPath = new Map(
+  [...serviceEntries, ...catalogEntries].map((entry) => [entry.path, entry]),
+)
 
 const pageLabels: Record<string, string> = {
   '/services': 'Services',
@@ -39,7 +73,29 @@ const pageLabels: Record<string, string> = {
   '/get-in-touch': 'Contact us',
   '/privacy-policy': 'Privacy policy',
   '/terms-of-use': 'Terms of use',
-  ...Object.fromEntries(serviceEntries.map((entry) => [entry.path, entry.name])),
+  [TECHNOLOGIES_ROOT]: 'Technologies',
+  ...Object.fromEntries([...entryByPath].map(([path, entry]) => [path, entry.name])),
+}
+
+/** Home › … › page, following the URL: /services/<area>/<service>, /technologies/<domain>. */
+function breadcrumbTrail(path: string): { name: string; path: string }[] {
+  const trail = [{ name: 'Home', path: '/' }]
+  const page = findServicePage(path)
+  if (page) {
+    trail.push({ name: 'Services', path: SERVICES_ROOT })
+    trail.push({ name: page.category.name, path: categoryPath(page.category) })
+  } else if (path.startsWith(`${SERVICES_ROOT}/`)) {
+    trail.push({ name: 'Services', path: SERVICES_ROOT })
+  } else if (path.startsWith(`${TECHNOLOGIES_ROOT}/`)) {
+    const solution = parentSolution(path.slice(TECHNOLOGIES_ROOT.length + 1))
+    trail.push(
+      solution
+        ? { name: solution.label, path: solution.href }
+        : { name: 'Technologies', path: TECHNOLOGIES_ROOT },
+    )
+  }
+  trail.push({ name: pageLabels[path] ?? path, path })
+  return trail
 }
 
 const organizationId = `${site.url}/#organization`
@@ -124,14 +180,16 @@ export function structuredData(path: string) {
     graph.push({
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
-        { '@type': 'ListItem', position: 2, name: pageLabels[path] ?? path, item: url },
-      ],
+      itemListElement: breadcrumbTrail(path).map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: absoluteUrl(crumb.path),
+      })),
     })
   }
 
-  const service = serviceEntries.find((entry) => entry.path === path)
+  const service = entryByPath.get(path)
   if (service) {
     graph.push({
       '@type': 'Service',
@@ -172,7 +230,7 @@ const redirects: Record<string, string> = {
   '/contact.html': '/get-in-touch',
   '/pricing.html': '/get-in-touch',
   '/services.html': '/services',
-  '/technologies.html': '/services',
+  '/technologies.html': '/technologies',
   '/cybersecurity-services.html': '/cybersecurity-services',
   '/software-development.html': '/software-development',
   '/website-development.html': '/software-development',
@@ -251,6 +309,26 @@ export function llmsTxt(): string {
       (entry) => `- [${entry.name}](${absoluteUrl(entry.path)}): ${entry.description}`,
     ),
     '',
+    '## Cybersecurity practice areas and services',
+    '',
+    ...serviceCategories.flatMap((category) => [
+      `### [${category.name}](${absoluteUrl(categoryPath(category))})`,
+      '',
+      category.heroBody,
+      '',
+      ...category.services.map(
+        (service) =>
+          `- [${service.name}](${absoluteUrl(`${categoryPath(category)}/${service.slug}`)}): ${service.summary}`,
+      ),
+      '',
+    ]),
+    '## Security technologies',
+    '',
+    ...securityTechnologies.map(
+      (technology) =>
+        `- [${technology.name}](${absoluteUrl(technologyPath(technology))}): ${technology.summary}`,
+    ),
+    '',
     '## Leadership',
     '',
     ...leaders.map((leader) => `- ${leader.name}, ${leader.role}`),
@@ -259,6 +337,7 @@ export function llmsTxt(): string {
     '',
     `- [Home](${absoluteUrl('/')})`,
     `- [All services](${absoluteUrl('/services')})`,
+    `- [Security technologies](${absoluteUrl(TECHNOLOGIES_ROOT)})`,
     `- [About and leadership](${absoluteUrl('/about-us')})`,
     `- [Contact and quote requests](${absoluteUrl('/get-in-touch')})`,
     '',

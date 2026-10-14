@@ -1,7 +1,12 @@
 import { partnerNavItems } from '../../content/partnerPages.js'
-import { technologyNavItems } from '../../content/technologyNav.js'
-import { ArrowFillContent } from '../ui/ArrowFill.js'
 import { ButtonLink } from '../ui/ButtonLink.js'
+import {
+  TechnologiesMenu,
+  isServicesPath,
+  isTechnologiesPath,
+  technologiesMenuScript,
+} from './TechnologiesMenu.js'
+import { NavDropdownLink as DropdownLink, currentLinkClass } from './NavDropdownLink.js'
 
 type HeaderProps = {
   currentPath?: string
@@ -56,42 +61,11 @@ const logoContrastScript = `(function () {
   window.addEventListener('resize', sync);
 })();`
 
-function currentLinkClass(baseClassName: string, href: string, currentPath: string) {
-  return href === currentPath ? `${baseClassName} w--current` : baseClassName
-}
-
-type DropdownLinkProps = {
-  href: string
-  label: string
-  currentPath: string
-  /** Page the link belongs to, when href carries a #fragment */
-  pagePath?: string
-}
-
-/**
- * Navbar dropdown item with an arrow-fill hover: the arrow circle on the right
- * expands to fill the item, the label turns white and the arrow slides through.
- */
-function DropdownLink({ href, label, currentPath, pagePath = href }: DropdownLinkProps) {
-  return (
-    <a
-      href={href}
-      aria-current={pagePath === currentPath ? 'page' : undefined}
-      className={currentLinkClass(
-        'dropdown-link navbar-dl-link w-dropdown-link arrow-fill',
-        pagePath,
-        currentPath,
-      )}
-    >
-      <ArrowFillContent label={label} />
-    </a>
-  )
-}
-
 export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow' }: HeaderProps) {
   const isCurrent = (href: string) => href === currentPath
   const isMaddy = brand === 'maddy'
-  const technologyActive = technologyNavItems.some((item) => item.href === currentPath)
+  const servicesActive = isServicesPath(currentPath)
+  const technologyActive = isTechnologiesPath(currentPath)
   const partnersActive = partnerNavItems.some((item) => item.href === currentPath)
 
   return (
@@ -165,7 +139,7 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
             <a
               href="/services"
               aria-current={isCurrent('/services') ? 'page' : undefined}
-              className={currentLinkClass('nav-link w-nav-link', '/services', currentPath)}
+              className={`nav-link w-nav-link${servicesActive ? ' w--current' : ''}`}
             >
               {isMaddy ? 'Services' : 'Products & Appetite'}
             </a>
@@ -181,33 +155,24 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
                   className="arrow-icon drop"
                 />
               </div>
-              <nav className="dropdown-list w-dropdown-list">
-                <div className="navbar-dropdown-wrapper">
-                  {isMaddy ? (
-                    technologyNavItems.map((item) => (
-                      <DropdownLink
-                        key={item.href}
-                        href={item.href}
-                        label={item.label}
-                        currentPath={currentPath}
-                      />
-                    ))
-                  ) : (
-                    <>
-                      <DropdownLink
-                        href="/cybersecurity-services"
-                        label="For Retail Agents"
-                        currentPath={currentPath}
-                      />
-                      <DropdownLink
-                        href="/software-development"
-                        label="For Carriers"
-                        currentPath={currentPath}
-                      />
-                    </>
-                  )}
-                </div>
-              </nav>
+              {isMaddy ? (
+                <TechnologiesMenu currentPath={currentPath} />
+              ) : (
+                <nav className="dropdown-list w-dropdown-list">
+                  <div className="navbar-dropdown-wrapper">
+                    <DropdownLink
+                      href="/cybersecurity-services"
+                      label="For Retail Agents"
+                      currentPath={currentPath}
+                    />
+                    <DropdownLink
+                      href="/software-development"
+                      label="For Carriers"
+                      currentPath={currentPath}
+                    />
+                  </div>
+                </nav>
+              )}
             </div>
             {isMaddy ? (
               <div data-hover="false" data-delay="0" className="dropdown w-dropdown">
@@ -290,6 +255,7 @@ export function Header({ currentPath = '/', showWhiteLogo = false, brand = 'flow
         </div>
       </div>
       <script dangerouslySetInnerHTML={{ __html: dropdownHoverScript }} />
+      {isMaddy ? <script dangerouslySetInnerHTML={{ __html: technologiesMenuScript }} /> : null}
       {isMaddy ? <script dangerouslySetInnerHTML={{ __html: logoContrastScript }} /> : null}
     </div>
   )
