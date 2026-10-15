@@ -11,6 +11,20 @@ import ProductsAppetiteDocument from '../pages/services/index.js'
 import { CarriersDocument } from '../pages/software-development/index.js'
 import { technologyPageConfigs } from '../pages/technologies/content/technologyPages.js'
 import { TechnologyServiceDocument } from '../pages/technologies/index.js'
+import {
+  SecurityTechnologyDocument,
+  ServiceCategoryDocument,
+  ServiceDetailDocument,
+  TechnologiesHubDocument,
+} from '../pages/catalog/index.js'
+import {
+  categoryPath,
+  securityTechnologies,
+  serviceCategories,
+  servicePages,
+  TECHNOLOGIES_ROOT,
+  technologyPath,
+} from '../pages/catalog/content/index.js'
 
 const technologyDocuments = Object.fromEntries(
   technologyPageConfigs.map((config) => [
@@ -30,6 +44,35 @@ const partnerDocuments = Object.fromEntries(
   ]),
 ) as Record<string, ComponentType>
 
+/** Practice areas, their sub-services and the security technology pages. */
+const catalogDocuments: Record<string, ComponentType> = {
+  [TECHNOLOGIES_ROOT]: TechnologiesHubDocument,
+  ...Object.fromEntries(
+    serviceCategories.map((category) => [
+      categoryPath(category),
+      function ServiceCategoryPage() {
+        return createElement(ServiceCategoryDocument, { category })
+      },
+    ]),
+  ),
+  ...Object.fromEntries(
+    servicePages.map((page) => [
+      page.path,
+      function ServicePage() {
+        return createElement(ServiceDetailDocument, { page })
+      },
+    ]),
+  ),
+  ...Object.fromEntries(
+    securityTechnologies.map((technology) => [
+      technologyPath(technology),
+      function SecurityTechnologyPage() {
+        return createElement(SecurityTechnologyDocument, { technology })
+      },
+    ]),
+  ),
+}
+
 const pageDocuments: Record<string, ComponentType> = {
   '/': SamDocument,
   '/services': ProductsAppetiteDocument,
@@ -41,6 +84,7 @@ const pageDocuments: Record<string, ComponentType> = {
   '/terms-of-use': TermsOfUseDocument,
   ...technologyDocuments,
   ...partnerDocuments,
+  ...catalogDocuments,
 }
 
 export const siteRoutes = Object.keys(pageDocuments)

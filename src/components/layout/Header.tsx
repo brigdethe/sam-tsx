@@ -1,6 +1,6 @@
 import { technologyNavItems } from '../../content/technologyNav.js'
 import { partnerNavItems } from '../../pages/partners/content/partnerPages.js'
-import { ArrowFillContent } from '../ui/ArrowFill.js'
+import { ArrowFillContent } from '../ui/icons/index.js'
 import { ButtonLink } from '../ui/ButtonLink.js'
 
 type HeaderProps = {

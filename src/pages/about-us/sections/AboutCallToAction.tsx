@@ -1,4 +1,4 @@
-import { ArrowFillContent } from '../../../components/ui/ArrowFill.js'
+import { ArrowFillContent } from '../../../components/ui/icons/index.js'
 
 export default function AboutCallToAction() {
   return (

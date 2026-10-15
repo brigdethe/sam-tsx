@@ -47,6 +47,1433 @@
   border-color: #2a2f8f !important;
 }
 
+/* Scroll-reactive heroes: the rounded rectangle stays fixed (corners always
+   rounded, including the top). The media is zoomed in at the top and zooms out
+   to fill the rectangle as you scroll; scrolling back up re-triggers it.
+   --hero-inset is driven per-frame from scroll (0 -> 1) by the runtime in
+   Loader.tsx. Uniform 1.5rem replaces webflow's asymmetric 6rem/1.5rem corners. */
+
+/* The hero-media stays a fixed rounded frame that CLIPS the zooming media.
+   The mask forces a composited buffer so the rounded corners also clip a
+   <video> (Chrome/Safari won't round-clip a raw <video> via overflow alone —
+   which is why the image heroes rounded but the homepage video hero did not). */
+
+/* The media itself carries the scroll zoom; it is clipped by the frame above. */
+
+.hero-hue-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(1, 5, 53, 0.96) 0%,
+    rgba(1, 5, 53, 0.75) 18%,
+    rgba(77, 81, 171, 0.45) 34%,
+    rgba(77, 81, 171, 0.12) 48%,
+    transparent 58%
+  );
+}
+
+/* A second-level heading drawn at main-heading size, so each page keeps a single h1. */
+
+@media screen and (max-width: 767px) {
+}
+
+/* Leadership intro: a full-width white band keeps the section photo below the text. */
+
+/* One line on wide screens. */
+@media screen and (min-width: 992px) {
+}
+
+/* About team grid: equal cards, Read Bio buttons on one line. */
+
+/* Name and role sit on the section photo: dark text with a light halo keeps them legible. */
+
+/* Center the incomplete last row of the About team grid (7 cards / 4 columns). */
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 480px) and (max-width: 991px) {
+}
+
+/* Leadership profile pop-up: photo with an overlapping card, plus previous/next controls. */
+
+@keyframes leader-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Keep the arrows and dots in one place when a long bio makes the card taller than the photo. */
+@media screen and (min-width: 768px) {
+}
+
+/* Phones: a white full-screen sheet with the photo stacked above centred text. */
+@media screen and (max-width: 767px) {
+}
+
+/* Cookie choice banner: sits above the page and navbar, below the page loader. */
+
+/* The per-category switches, shown by "Manage choices". */
+
+/* Both choices carry the same weight, so rejecting is as easy as accepting. */
+
+@media screen and (max-width: 767px) {
+}
+
+/* Page loader: navy + long logo */
+
+/* Soft radial shine behind the logo */
+
+@keyframes maddy-loader-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes maddy-loader-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Partner cards: text crossfades out to a logo on hover/focus */
+
+/* Text layer: visible by default, fades + lifts away on hover */
+
+/* Logo layer: hidden by default ("vanishes if not there"), fades in on hover */
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Contact hero: same rounded card in a navy frame as the homepage hero. The
+   hero-media clip + scroll zoom come from the shared hero rules above. */
+
+/* Contact form as frosted glass over the video, in the site's navy/lime palette.
+   The webflow gradient slab behind it is dropped. */
+
+/* Webflow hides .select-field, which made the required "How can we help?"
+   dropdown unfocusable, so reportValidity() failed silently and the form never
+   sent. Show both dropdowns side by side (stacking when narrow) in the glass
+   style, with a white chevron. */
+
+/* Empty (placeholder) choice reads like the text-field placeholders. */
+
+/* The opened list is drawn by the OS on a light surface. */
+
+/* Custom glass dropdowns (built over the selects by GetInTouchPage.tsx). The
+   native select stays underneath, invisible, for submit and validation. */
+
+/* The list is appended to <body> (outside the clipping hero card), so these
+   rules aren't scoped to .is-contact-hero. Glass to match the form card. */
+
+/* Options slide in one after another as the menu opens */
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Browser autofill paints inputs yellow/white; keep the glass look. */
+
+/* Video fills the card edge to edge (cover). No scroll zoom here, so only the
+   unavoidable top/bottom trim from the wider-than-16:9 card is lost. */
+
+/* Even navy tint so the text and form read over the video. */
+
+/* Desktop: the framed hero fills exactly one screen (viewport minus the 1rem
+   frame top and bottom), content centred below the fixed navbar, so the footer
+   only appears on scroll. min-height lets it grow rather than clip on short
+   screens; stacked tablet/mobile layouts keep their natural height. */
+@media (min-width: 992px) {
+  /* Tighter form card so the whole hero fits a laptop screen. */
+}
+
+/* The second, whole-frame copy of the clip is a phone-only layer. */
+
+/* Phone layout (up to 767px; tablet and desktop are untouched).
+   1. Reading order, top to bottom: heading + intro, the form, then phone /
+      email / office. .git-left is dissolved (display: contents) so its two
+      blocks and the form become siblings in the stacked .git-hero and can be
+      ordered freely. Desktop never matches this query, so its two columns stay.
+   2. The video still fills the whole card, as before (.hero-media__video,
+      object-fit: cover). On its own that crops a portrait card to the middle of
+      the 16:9 clip and cuts off the mascots, who stand at its left and right
+      edges. So a second copy of the same clip (.hero-media__video-whole) is
+      laid over the bottom of the card at full width and its own 1600:902 shape,
+      nothing cropped, and fades into the full-card video above it. The card's
+      bottom padding reserves the strip the mascots stand in, so the form and
+      text never cover them, on any phone width. */
+@media (max-width: 767px) {
+  /* Navy tint for legibility, as on desktop, easing off over the mascot strip
+     so they keep their colour. */
+}
+
+/* Contact intro: justified block with a width cap so the last line doesn't
+   stretch. Whole words only, no hyphenation. */
+
+/* Dropdown group label (e.g. "Partners" heading inside the About Us menu) */
+
+/* Partner quote section: subtle photo backdrop with a dark overlay for legibility */
+
+/* Webflow hides .select-field, which made the required "What are you
+   interested in?" dropdown unfocusable: reportValidity() failed silently and
+   the partner quote form could never be sent. Show it like the other white
+   fields, with a dark chevron. */
+
+/* Partner detail pages: product & service category cards */
+
+@media screen and (max-width: 767px) {
+}
+
+/* Mobile nav: sticky bar + compact menu flush under it */
+@media screen and (max-width: 991px) {
+  /* Kill the full-viewport menu sheet; size to links only, grow with Technologies */
+
+  /* Hamburger ↔ X when Webflow toggles .w--open */
+
+  /* Smooth Technologies open/close (Webflow toggles display; keep it block and animate height) */
+}
+
+/* Technologies dropdown (desktop): under the toggle, left-aligned (kill Webflow 8rem pad) */
+@media screen and (min-width: 992px) {
+  /* Panels follow Webflow's w--open: hover opens and mouse-out closes (data-hover
+     is set for desktop mice in Header.tsx), and a click toggles. Webflow closes
+     the other dropdown when one opens, so only one panel is ever shown. */
+}
+
+/* Arrow-fill hover (markup: ArrowFillContent in components/ui/ArrowFill.tsx).
+   The arrow circle on the right grows to fill the element, the label changes
+   colour as the fill passes over it (a recoloured copy revealed by clip-path),
+   and the arrow slides out as a new one slides in. Each use sets the circle
+   size and the colours below. */
+
+/* Navbar dropdown items */
+
+/* Buttons: a white arrow circle that fills the button on hover, turning the
+   label to the button's own colour. The fill replaces Webflow's hover tint. */
+
+/* Once the fill has covered the button, match the button to it so no dark
+   hairline shows at the rounded edge; snap back instantly on leave. */
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Reference footer layout over the existing animated background. */
+
+@media screen and (max-width: 1100px) {
+}
+@media screen and (max-width: 900px) {
+}
+
+/* Software products showcase: a list of rows where hovering one floats a
+   picture and a "View" badge alongside the pointer. The trailing motion is
+   driven from script; everything else here is transitions. */
+.product-showcase__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Dimming the whole list and lifting only the hovered row is what makes the
+   pointer feel like it is picking one item out of the set. */
+
+/* Floating picture. Fixed positioning keeps it with the pointer without the
+   page scroll offset that pageX would otherwise need correcting for. */
+
+/* The tilt lives on an inner layer so the script can keep translating the
+   outer one along the pointer without the two transforms fighting. */
+
+/* The slides are stacked full-height; the script slides the stack by whole
+   multiples of 100% so the hovered row's picture lands in the frame. */
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 600px) {
+}
+
+/* No pointer to follow, and nothing to reveal on hover, so the panel stays
+   out of the way entirely. Tapping a row still opens the picture. */
+@media (hover: none) {
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Picture gallery opened from a product row. The dialog supplies Escape, the
+   backdrop and focus handling; everything below is presentation. */
+
+/* Re-added by script on every change of picture, so each one lands with the
+   same settle as the first. */
+
+@keyframes pg-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dock of every shot, draggable anywhere in the dialog. */
+
+/* Alternating tilt, the way the dock reads in the original. */
+
+@media screen and (max-width: 600px) {
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* One knob for all three contact icons. */
+
+/* Animated at-sign on the contact page. pathLength="1" on both shapes
+   normalises their lengths, so one dashoffset keyframe draws either of them,
+   which is what framer's pathLength animation does. */
+
+/* Hovering anywhere on the email line redraws the mark: the ring first, then
+   the tail a beat later, matching the delay in the original variants. */
+
+@keyframes at-draw {
+  from {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Animated phone on the contact page. Motion spreads a keyframe array evenly
+   across the duration, so rotate's five values land on 0/25/50/75/100% and
+   scale's three on 0/50/100%; the two timelines are merged below. */
+
+@keyframes phone-ring {
+  0% {
+    transform: rotate(10deg) scale(1);
+  }
+  25% {
+    transform: rotate(20deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Animated map pin on the contact page. The whole mark hops, and the inner
+   ring draws itself a beat later. The hop distance is scaled from the
+   original's -5px at size 28 to keep the same lift at our 20px. */
+
+/* Motion drives pathLength through stroke-dasharray and pathOffset through a
+   negated stroke-dashoffset. pathLength="1" on the circle normalises its
+   length, so both animate between plain numbers. */
+
+/* pathOffset 0.5 -> 0 starts the ring half a turn round, so it sweeps into
+   place rather than growing from its start point. */
+@keyframes pin-ring {
+  from {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: -0.5;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    stroke-dasharray: 1 1;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* times: [0, 0.6, 1] puts the peak at 60% rather than halfway. */
+@keyframes pin-hop {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-3.5px);
+  }
+  100% {
+    transform: translateY(-2.1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Contact page: the phone and email links keep their underline for hover and
+   keyboard focus instead of wearing it permanently. Scoped to .git-left so the
+   same class on the partner pages is left alone. */
+
+/* About Us mission photo: Webflow keeps its portrait shape only below 768px.
+   Between 768px and 991px the box became a short full-width strip that showed
+   just the top half of the picture, so keep the shape there too. */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Navbar logo: white over the dark hero, navy once the navbar turns white (on
+   scroll, or behind the open mobile menu). Header.tsx mirrors the navbar's
+   background opacity into --maddy-nav-solid; both images share one canvas. */
+
+/* Desktop navbar: logo | menu pill | Contact Us on a 1fr auto 1fr grid, so the
+   pill sits dead centre whatever the logo and button widths (Webflow nudged it
+   with left: 3rem), and the button stretches to the pill's height and radius. */
+@media screen and (min-width: 992px) {
+  /* The font leaves more room under the letters than above them, so a centred
+     line box still reads high. Trim the line to cap height and baseline so the
+     label is optically centred; older browsers get the original 0.1rem nudge. */
+
+  @supports not (text-box: trim-both cap alphabetic) {
+  }
+}
+
+/* Webflow widens the heroes' side padding to 5rem from 1440px, which put the
+   hero copy 1rem inside the navbar's edges (the hero card adds its own 1rem).
+   Keep 4rem so the heroes line up with the navbar like the rest of the page. */
+@media screen and (min-width: 1440px) {
+}
+
+/* ==========================================================================
+   Technologies dropdown (components/layout/TechnologiesMenu.tsx): solutions as
+   plain items; a solution's technologies open underneath it, in the same list,
+   on hover (desktop) or tap (touch).
+   ========================================================================== */
+.navbar .dropdown-link.navbar-dl-link.nav-solution {
+  display: block;
+  border-radius: 0.8rem;
+  background-color: transparent;
+  color: #131116;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.navbar .dropdown-link.navbar-dl-link.nav-solution:hover,
+.navbar .dropdown-link.navbar-dl-link.nav-solution:focus-visible,
+.navbar .nav-flyout.is-open > .dropdown-link.navbar-dl-link.nav-solution {
+  background-color: var(--color--purple-10);
+  color: var(--color--purple-500);
+}
+
+.navbar .dropdown-link.navbar-dl-link.nav-solution.w--current {
+  color: var(--color--purple-500);
+}
+
+.nav-flyout__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-flyout.is-open > .nav-flyout__panel {
+  grid-template-rows: 1fr;
+}
+
+.nav-flyout__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.nav-flyout__list {
+  margin: 0.15rem 0 0.35rem 1.1rem;
+  padding: 0 0 0 0.6rem;
+  border-left: 1px solid rgba(77, 81, 171, 0.18);
+  list-style: none;
+}
+
+.nav-flyout__list li {
+  margin: 0;
+}
+
+/* The solution's own page heads its list only where a tap opens the list. */
+.nav-flyout__overview {
+  display: none;
+}
+
+@media (hover: none), (max-width: 991px) {
+  .nav-flyout__overview {
+    display: block;
+  }
+
+  .nav-flyout__overview .nav-flyout__name {
+    color: var(--color--purple-500);
+  }
+}
+
+.nav-flyout__link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.2s ease;
+}
+
+.nav-flyout__icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.45rem;
+  background-color: var(--color--purple-10);
+  color: var(--color--purple-500);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-flyout__icon svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.nav-flyout__name {
+  min-width: 0;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: #26222e;
+  white-space: normal;
+}
+
+.nav-flyout__link:hover,
+.nav-flyout__link:focus-visible,
+.nav-flyout__link.is-current {
+  background-color: var(--color--purple-10);
+}
+
+.nav-flyout__link:hover .nav-flyout__icon,
+.nav-flyout__link:focus-visible .nav-flyout__icon,
+.nav-flyout__link.is-current .nav-flyout__icon {
+  background-color: var(--color--purple-500);
+  color: #fff;
+}
+
+.nav-flyout__link.is-current .nav-flyout__name {
+  color: var(--color--purple-500);
+}
+
+.nav-flyout__link:focus-visible,
+.navbar .nav-solution:focus-visible {
+  outline: 2px solid var(--color--purple-500);
+  outline-offset: 2px;
+}
+
+@media screen and (min-width: 992px) {
+  /* Tall enough for opened solutions; scrolls on short windows. */
+  .navbar .navbar-dropdown-wrapper.has-flyouts {
+    min-width: 17rem;
+    max-height: min(80vh, 40rem);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* Room for an opened solution inside the open Technologies list. */
+  .navbar .dropdown-list.w-dropdown-list.w--open:has(.has-flyouts) {
+    max-height: 60rem;
+  }
+
+  .nav-flyout__name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-flyout__panel {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   Catalogue pages (sub-services, practice areas, technologies). Markup:
+   components/sections/CatalogSections.tsx. Hero, overview and CTA reuse the
+   technology-page classes; these rules add breadcrumbs, cards, steps and tags.
+   ========================================================================== */
+.cat-crumbs {
+  margin-bottom: 1.2rem;
+}
+
+.cat-crumbs {
+  display: flex;
+}
+
+.cat-crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0;
+  margin: 0;
+  padding: 0.4rem 0.4rem 0.4rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.2rem;
+  background-color: rgba(1, 5, 53, 0.42);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  list-style: none;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cat-crumbs li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+
+.cat-crumbs li + li::before {
+  content: '/';
+  margin: 0 0.55rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cat-crumbs a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.cat-crumbs a:hover {
+  color: #fff;
+}
+
+.cat-crumbs li[aria-current='page'] {
+  gap: 0.35rem;
+  padding-right: 0.55rem;
+  font-variation-settings: 'wght' 500;
+  color: #fff;
+}
+
+.cat-crumbs__icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  color: var(--color--flow-pastel-lime-300);
+}
+
+.cat-hero h1 {
+  max-width: 54rem;
+}
+
+.cat-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.cat-section.is-tinted {
+  border-radius: 1.5rem;
+  background-color: #f4f4fa;
+}
+
+.cat-eyebrow {
+  margin: 0 0 0.8rem;
+  font-size: 0.62rem;
+  font-variation-settings: 'wght' 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color--purple-500);
+}
+
+.cat-head {
+  max-width: 42rem;
+  margin-bottom: 2.6rem;
+}
+
+.cat-head h2,
+.cat-approach__copy h2,
+.cat-outcomes h2 {
+  margin: 0;
+}
+
+.cat-head__intro {
+  margin: 1rem 0 0;
+  color: #55515d;
+}
+
+/* Capability cards */
+.cat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.8rem 1.6rem 1.7rem;
+  overflow: hidden;
+  border: 1px solid rgba(1, 5, 53, 0.08);
+  border-radius: 1.2rem;
+  background-color: #fff;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.cat-card::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color--purple-500), var(--color--flow-pastel-lime-300));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cat-card:hover {
+  border-color: transparent;
+  box-shadow: 0 1.4rem 2.8rem -1.4rem rgba(1, 5, 53, 0.28);
+  transform: translateY(-3px);
+}
+
+.cat-card:hover::after {
+  transform: scaleX(1);
+}
+
+.cat-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+.cat-card__icon,
+.cat-link__icon {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.75rem;
+  background-color: var(--color--purple-10);
+  color: var(--color--purple-500);
+}
+
+.cat-card__icon svg,
+.cat-link__icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.cat-card__index {
+  font-size: 0.7rem;
+  font-variation-settings: 'wght' 500;
+  letter-spacing: 0.06em;
+  color: #a39fab;
+}
+
+.cat-card__title {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.cat-card__body {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #55515d;
+}
+
+/* Approach: photo + numbered steps */
+.cat-approach {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.9rem;
+}
+
+.cat-approach__picture {
+  flex: 0 0 auto;
+}
+
+.cat-approach__copy {
+  flex: 1 1 0;
+  max-width: 30rem;
+}
+
+.cat-steps {
+  position: relative;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-step {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding-bottom: 1.4rem;
+}
+
+.cat-step:last-child {
+  padding-bottom: 0;
+}
+
+.cat-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 1.9rem;
+  bottom: 0.3rem;
+  left: 0.85rem;
+  width: 1px;
+  background-color: rgba(77, 81, 171, 0.22);
+}
+
+.cat-step__num {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: var(--color--purple-500);
+  font-size: 0.68rem;
+  font-variation-settings: 'wght' 600;
+  color: #fff;
+}
+
+.cat-step__title,
+.cat-benefit__title,
+.cat-card__title {
+  letter-spacing: -0.01em;
+}
+
+.cat-step__title {
+  margin: 0.15rem 0 0.3rem;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.cat-step__body {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #55515d;
+}
+
+/* Deliverables and outcomes */
+.cat-outcomes {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.cat-checks {
+  display: grid;
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background-color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.cat-checks__icon {
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: var(--color--flow-pastel-lime-300);
+  color: #010535;
+}
+
+.cat-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cat-benefit {
+  padding: 1.4rem 1.3rem;
+  border-radius: 1rem;
+  background-color: #010535;
+  color: #fff;
+}
+
+.cat-benefit:nth-child(2),
+.cat-benefit:nth-child(3) {
+  background-color: var(--color--purple-500);
+}
+
+.cat-benefit__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--color--flow-pastel-lime-300);
+}
+
+.cat-benefit:nth-child(2) .cat-benefit__title,
+.cat-benefit:nth-child(3) .cat-benefit__title {
+  color: #fff;
+}
+
+.cat-benefit__body {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Linked cards */
+.cat-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-links li {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .cat-links.is-two-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.cat-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 100%;
+  padding: 1.3rem 1.2rem 1.3rem 1.3rem;
+  border: 1px solid rgba(1, 5, 53, 0.08);
+  border-radius: 1.1rem;
+  background-color: #fff;
+  color: #131116;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.cat-link:hover,
+.cat-link:focus-visible {
+  border-color: transparent;
+  box-shadow: 0 1.2rem 2.4rem -1.2rem rgba(1, 5, 53, 0.3);
+  transform: translateY(-3px);
+}
+
+.cat-link:focus-visible {
+  outline: 2px solid var(--color--purple-500);
+  outline-offset: 2px;
+}
+
+.cat-link__icon {
+  flex: 0 0 auto;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.cat-link:hover .cat-link__icon {
+  background-color: var(--color--purple-500);
+  color: #fff;
+}
+
+.cat-link__text {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.cat-link__meta {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.58rem;
+  font-variation-settings: 'wght' 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color--purple-500);
+}
+
+.cat-link__name {
+  display: block;
+  font-size: 0.92rem;
+  font-variation-settings: 'wght' 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.cat-link__summary {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #55515d;
+}
+
+.cat-link__arrow {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--color--purple-10);
+  color: var(--color--purple-500);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cat-link__arrow-svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.cat-link:hover .cat-link__arrow {
+  background-color: var(--color--purple-500);
+  color: #fff;
+  transform: rotate(-45deg);
+}
+
+/* Equal-size, image-free service cards for practice-area pages. */
+.cat-service-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(13rem, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-service-links li {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+}
+
+.cat-service-link {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 0;
+  padding: 1.6rem;
+  border: 1px solid rgba(77, 81, 171, 0.08);
+  border-radius: 1.1rem;
+  background: linear-gradient(135deg, #f0edfb 0%, #fff 100%);
+  color: #131116;
+  text-decoration: none;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.cat-service-links li:nth-child(4n + 2) .cat-service-link {
+  background: linear-gradient(135deg, #f8f4ff 0%, #e6ddfb 100%);
+}
+
+.cat-service-links li:nth-child(4n + 3) .cat-service-link {
+  background: linear-gradient(135deg, #faf8ff 0%, #eee8fc 100%);
+}
+
+.cat-service-links li:nth-child(4n) .cat-service-link {
+  background: linear-gradient(135deg, #ece8fa 0%, #d6c4fa 100%);
+}
+
+.cat-service-link:hover,
+.cat-service-link:focus-visible {
+  border-color: rgba(77, 81, 171, 0.35);
+  box-shadow: 0 1.2rem 2.4rem -1.4rem rgba(1, 5, 53, 0.28);
+  transform: translateY(-3px);
+}
+
+.cat-service-link:focus-visible {
+  outline: 2px solid var(--color--purple-500);
+  outline-offset: 2px;
+}
+
+.cat-service-link__name {
+  display: block;
+  color: var(--color--purple-500);
+  font-size: 1.15rem;
+  font-variation-settings: 'wght' 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.cat-service-link__summary {
+  display: block;
+  max-width: 32rem;
+  margin-top: 0.35rem;
+  color: #55515d;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+/* Technology categories as tags, on the dark overview */
+.cat-stack {
+  margin-top: 2rem;
+}
+
+.cat-stack__title {
+  margin: 0 0 0.8rem;
+  font-size: 0.62rem;
+  font-variation-settings: 'wght' 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color--flow-pastel-lime-300);
+}
+
+.cat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-tags li {
+  margin: 0;
+  padding: 0.42rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.06);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* Services overview: every practice area with its services */
+.cat-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-directory > li {
+  margin: 0;
+  padding: 1.4rem 1.3rem 1.2rem;
+  border: 1px solid rgba(1, 5, 53, 0.08);
+  border-radius: 1.1rem;
+  background-color: #fff;
+}
+
+.cat-directory__head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+  color: #131116;
+}
+
+.cat-directory__head:hover .cat-directory__name {
+  color: var(--color--purple-500);
+}
+
+.cat-directory__name {
+  font-size: 0.95rem;
+  font-variation-settings: 'wght' 500;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.cat-directory ul {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-directory ul li {
+  margin: 0;
+}
+
+.cat-directory ul a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.6rem;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: #55515d;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cat-directory ul a:hover {
+  background-color: var(--color--purple-10);
+  color: #010535;
+}
+
+.cat-directory ul a svg {
+  width: 0.7rem;
+  height: 0.7rem;
+  flex: 0 0 auto;
+  opacity: 0;
+  color: var(--color--purple-500);
+  transition: opacity 0.2s ease;
+}
+
+.cat-directory ul a:hover svg {
+  opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+  .cat-section {
+    padding-top: 3.8rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .cat-cards,
+  .cat-links,
+  .cat-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cat-service-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cat-approach {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.4rem;
+  }
+
+  .cat-approach__picture {
+    width: 100%;
+    height: 22rem;
+  }
+
+  .cat-approach__copy {
+    max-width: none;
+  }
+
+  .cat-outcomes {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cat-cards,
+  .cat-links,
+  .cat-directory,
+  .cat-benefits__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-service-links {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-card__top {
+    margin-bottom: 1.4rem;
+  }
+
+  .cat-approach__picture {
+    height: 16rem;
+  }
+
+  .cat-head {
+    margin-bottom: 1.8rem;
+  }
+
+  .cat-crumbs ol {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-card,
+  .cat-card::after,
+  .cat-link,
+  .cat-service-link,
+  .cat-link__arrow {
+    transition: none;
+  }
+}
+
+/* Footer with the Cybersecurity column (Footer.tsx): one more link column. */
+.mf__grid.mf__grid--wide {
+  grid-template-columns: minmax(200px, 1fr) 215px 150px 115px 290px;
+}
+
+@media screen and (max-width: 1100px) {
+  .mf__grid.mf__grid--wide {
+    grid-template-columns: minmax(150px, 1fr) 190px 140px 105px 240px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mf__grid.mf__grid--wide {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* While the phone/tablet menu is open it is the page's top layer: the cookie
+   banner steps aside so it cannot cover menu items (the Services accordion can
+   push the next toggle down to where the banner sits). It returns, unanswered,
+   as soon as the menu closes. */
+@media screen and (max-width: 991px) {
+  html:has(.navbar .menu-button.w--open) .cookie-banner {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* "What we deliver" on /services (components/sections/ServiceCoverageGrid.tsx):
+   the Software products card design and size, one card per practice area,
+   each card a link to the area page. */
+.svc-coverage-head {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.svc-coverage-head p {
+  max-width: 26rem;
+  margin: 0;
+}
+
+.svc-coverage {
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.svc-coverage:hover,
+.svc-coverage:focus-visible {
+  border-color: rgba(77, 81, 171, 0.45);
+  box-shadow: 0 1.2rem 2.4rem -1.6rem rgba(1, 5, 53, 0.25);
+}
+
+.svc-coverage:hover .svc-coverage__title strong,
+.svc-coverage:focus-visible .svc-coverage__title strong {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.svc-coverage:focus-visible {
+  outline: 2px solid var(--color--purple-500);
+  outline-offset: 2px;
+}
+
+.svc-coverage p {
+  margin: 0;
+}
+
+/* Webflow fixes .f-coverage at 4rem (two lines); long area names wrap to three
+   lines on laptop widths. Grow instead, keeping the two-line minimum so short
+   titles still line up. */
+.svc-coverage .svc-coverage__title.f-coverage {
+  height: auto;
+  min-height: 4rem;
+}
+
+/* Thirteen cards in rows of three: the last one sits centred, same size. */
+@media screen and (min-width: 992px) {
+  .coverages-grid.svc-coverage-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .svc-coverage-grid > .svc-coverage {
+    grid-column: span 2;
+  }
+
+  .svc-coverage-grid > .svc-coverage:last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .svc-coverage-head {
+    align-items: flex-start;
+  }
+}
+
+/* "Our services" heading container (/services): Webflow gives it width: 100%
+   plus 5rem side margins between 992px and 1439px, which pushed the page 13 to
+   80px wider than the window. Let the margins come out of the width instead. */
+.container.padding-as-a-section {
+  width: auto;
+}
+
+/* Maddy brand palette overrides (from maddygroupltd.com) */
+
+/* Hardcoded purple leftovers → brand blues */
+
 .text-white {
   color: white !important;
 }

@@ -1,4 +1,4 @@
-import { ArrowFillContent } from '../../../components/ui/ArrowFill.js'
+import { ArrowFillContent } from '../../../components/ui/icons/index.js'
 
 export default function AboutHero() {
   return (
@@ -12,9 +12,12 @@ export default function AboutHero() {
             muted
             playsInline
             preload={'auto'}
-            poster={'/images/leadership-hero.jpg'}
+            poster={'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/mascot_team.jpg'}
           >
-            <source src={'/images/leadership-hero.mp4'} type={'video/mp4'} />
+            <source
+              src={'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/mascot_team_1.mp4'}
+              type={'video/mp4'}
+            />
           </video>
         </div>
         <div className={'w-layout-blockcontainer container hero-description-container w-container'}>
