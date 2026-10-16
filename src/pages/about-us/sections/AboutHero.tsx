@@ -1,5 +1,3 @@
-import { ArrowFillContent } from '../../../components/ui/icons/index.js'
-
 export default function AboutHero() {
   return (
     <div className={'page-wrapper dark-wrapper is-overflow-hidden'}>
@@ -37,13 +35,6 @@ export default function AboutHero() {
                 'Maddy Group Ltd is a technology and cybersecurity company based in Accra. We protect digital infrastructure and support growth through reliable technology, delivered with integrity and professional care.'
               }
             </p>
-            <a
-              data-w-id={'6edbdcda-b7a6-c67d-3d34-d671091daf17'}
-              href={'/get-in-touch'}
-              className={'button is-black-button w-inline-block arrow-fill arrow-fill--button'}
-            >
-              <ArrowFillContent label={'Request a quote'} />
-            </a>
           </div>
         </div>
       </section>

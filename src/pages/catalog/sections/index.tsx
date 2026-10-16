@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useId, type ReactNode } from 'react'
 import { brandImages, type Highlight, type ImageKey } from '../content/index.js'
 import { CatalogIcon } from '../../../components/ui/icons/index.js'
 import { IconName } from '../../../content/icons.js'
@@ -77,12 +77,37 @@ export function CatalogOverview({
   body,
   points,
   aside,
+  highlights,
 }: {
   title: string
   body: string
   points: string[]
   aside?: ReactNode
+  highlights?: Highlight[]
 }) {
+  if (highlights) {
+    return (
+      <section className={'section cat-why-matters'}>
+        <div className={'w-layout-blockcontainer container w-container'}>
+          <div className={'cat-why-matters__intro'}>
+            <h2>{title}</h2>
+            <p>{body}</p>
+          </div>
+          <ul className={'cat-why-matters__grid'}>
+            {highlights.map((highlight) => (
+              <li className={'cat-why-matters__item'} key={highlight.title}>
+                <span className={'cat-why-matters__copy'}>
+                  <span className={'cat-why-matters__title'}>{highlight.title}:</span>
+                  <span className={'cat-why-matters__body'}>{highlight.body}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className={'section is-markets-section'}>
       <div
@@ -126,14 +151,14 @@ export function SectionHead({
   title,
   intro,
 }: {
-  eyebrow: string
+  eyebrow?: string
   title: string
   intro?: string
 }) {
   return (
     <div className={'cat-head'}>
       <p className={'cat-eyebrow'}>{eyebrow}</p>
-      <h2>{title}</h2>
+      <h2 className="is-h1">{title}</h2>
       {intro ? <p className={'is-font-size-body-m cat-head__intro'}>{intro}</p> : null}
     </div>
   )
@@ -178,47 +203,69 @@ export function CapabilityCards({
   )
 }
 
-/** Photo beside a numbered list of steps (the delivery approach). */
+/** A visual overview of the engagement process. */
 export function ApproachFeature({
   title,
   body,
   steps,
   image,
 }: {
-  title: string
+  title: ReactNode
   body: string
   steps: Highlight[]
   image: ImageKey
 }) {
+  const gradientId = useId()
+
   return (
-    <section className={'section cat-section is-approach'}>
+    <section className={'section cat-section is-approach cat-approach-section'}>
+      <svg
+        aria-hidden={'true'}
+        className={'cat-approach-section__shape'}
+        preserveAspectRatio={'xMidYMin slice'}
+        viewBox={'0 0 1270 1270'}
+      >
+        <defs>
+          <linearGradient id={gradientId} x1={'1'} x2={'0'} y1={'0'} y2={'1'}>
+            <stop offset={'0%'} stopColor={'#B797F8'} />
+            <stop offset={'100%'} stopColor={'#fff'} />
+          </linearGradient>
+        </defs>
+        <path
+          d={
+            'M819.176 224.2C776.23 224.2 736.916 200.103 717.425 161.835L666.763 62.3649C647.273 24.0963 607.958 0 565.012 0H114.189C51.1239 0 0 51.124 0 114.189V1155.81C0 1218.88 51.1239 1270 114.189 1270H1155.81C1218.88 1270 1270 1218.88 1270 1155.81V338.388C1270 275.324 1218.88 224.2 1155.81 224.2H819.176Z'
+          }
+          fill={`url(#${gradientId})`}
+        />
+      </svg>
       <div className={'w-layout-blockcontainer container w-container'}>
         <div className={'cat-approach'}>
+          <div className={'cat-approach__copy'}>
+            <h2>{title}</h2>
+            <p className={'is-font-size-body-m cat-head__intro'}>{body}</p>
+          </div>
+          <ol className={'cat-steps'}>
+            {steps.map((step, index) => (
+              <li className={'cat-step'} key={step.title}>
+                <span
+                  className={'cat-step__num'}
+                  style={{ background: `rgba(102, 54, 202, ${1 - 0.15 * index})` }}
+                  aria-hidden={'true'}
+                ></span>
+                <div>
+                  <h3 className={'cat-step__title'}>{step.title}</h3>
+                  <p className={'cat-step__body'}>{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
           <div className={'rounded-feature-picture cat-approach__picture'}>
             <img
-              src={brandImages[image].src}
+              src={'/images/mascot_solo.png'}
               loading={'lazy'}
               alt={brandImages[image].alt}
               className={'rounded-feature-img'}
             />
-          </div>
-          <div className={'cat-approach__copy'}>
-            <p className={'cat-eyebrow'}>{'How we deliver'}</p>
-            <h2>{title}</h2>
-            <p className={'is-font-size-body-m cat-head__intro'}>{body}</p>
-            <ol className={'cat-steps'}>
-              {steps.map((step, index) => (
-                <li className={'cat-step'} key={step.title}>
-                  <span className={'cat-step__num'} aria-hidden={'true'}>
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3 className={'cat-step__title'}>{step.title}</h3>
-                    <p className={'cat-step__body'}>{step.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
           </div>
         </div>
       </div>

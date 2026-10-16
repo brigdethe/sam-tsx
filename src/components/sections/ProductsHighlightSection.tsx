@@ -3,31 +3,29 @@ import Accordion, { AccordionItem } from '../layout/Accordion.js'
 type Product = {
   name: string
   label: string
+  description: string
   image: string
   imageAlt: string
   color: string
+  images?: { src: string; alt: string }[]
 }
 
-// Descriptors and the BeaconOS screenshot come from the products and appetite
-// page; the other three reuse photographs already in the brand library.
+// Product summaries are based on the supplied product-detail copy.
 const products: Product[] = [
   {
     name: 'Maddy Memo',
     label: 'Internal communications',
+    description:
+      'Manage official memos, correspondence and document approvals in one secure workspace. Route documents through clear approval stages, track decisions and keep searchable records under your organisation’s control.',
     image: '/images/brand/software-collaboration-mizuno-k-12899191.jpg',
     imageAlt: 'Colleagues working together on a shared document',
     color: '#010535',
   },
   {
-    name: 'Maddy Security Ops',
-    label: 'Investigation and OSINT',
-    image: '/images/brand/security-analyst-kampus-8204353.jpg',
-    imageAlt: 'An analyst reviewing security data on screen',
-    color: '#4d51ad',
-  },
-  {
     name: 'MaddyOps',
     label: 'Industrial operations',
+    description:
+      'Connect fleet, assets, energy, safety, shifts, inventory and operational activity in one configurable environment. Give teams central visibility and clearer reporting across departments and locations.',
     image: '/images/brand/industrial-automation-freek-wolsink-34222005.jpg',
     imageAlt: 'Automated industrial equipment on a production line',
     color: '#143674',
@@ -35,9 +33,17 @@ const products: Product[] = [
   {
     name: 'BeaconOS',
     label: 'HR platform',
+    description:
+      'Manage the employee lifecycle—from recruitment and onboarding through attendance, leave, payroll and performance—in one connected HR platform. Give HR teams, managers and employees practical self-service tools.',
     image: '/images/beacon-os.png',
     imageAlt: 'The BeaconOS dashboard',
-    color: '#cfe0ff',
+    color: '#1E40AF',
+    images: [
+      { src: '/images/BeaconOS Full.png', alt: 'BeaconOS Full' },
+      { src: '/images/BeaconOS One.png', alt: 'BeaconOS One' },
+      { src: '/images/BeaconOS Two.png', alt: 'BeaconOS Two' },
+      { src: '/images/BeaconOS Three.png', alt: 'BeaconOS Three' },
+    ],
   },
 ]
 
@@ -58,22 +64,13 @@ const shots: Shot[] = products.map((product) => ({
   url: product.image,
 }))
 
-const photos = (seed: string, n = 4) =>
-  Array.from({ length: n }, (_, i) => ({
-    src: `https://picsum.photos/seed/${seed}-${i}/600/700`,
-    alt: `${seed} preview ${i + 1}`,
-  }))
-
-const lorem =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-
 const items: AccordionItem[] = products.map((product) => ({
   id: product.name.toLowerCase().replace(/\s+/g, '-'),
   caption: product.label,
   title: product.name,
-  description: lorem,
+  description: product.description,
   color: product.color,
-  images: photos(product.name.toLowerCase().replace(/\s+/g, '-'), 4),
+  images: product.images || [],
 }))
 
 // The dialog renders the first shot server side so it is never empty before

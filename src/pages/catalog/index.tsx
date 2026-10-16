@@ -18,7 +18,6 @@ import {
   findServicePage,
   findTechnology,
   securityTechnologies,
-  serviceCategories,
   siblingServices,
   technologiesForService,
   technologyPath,
@@ -155,23 +154,12 @@ export function ServiceDetailDocument({ page }: { page: ServicePage }) {
 
 export function ServiceCategoryDocument({ category }: { category: ServiceCategory }) {
   const path = categoryPath(category)
-  const index = serviceCategories.indexOf(category)
   const [heroImage, featureImage] = category.images
   const cards: LinkCard[] = categoryLinks(category).map((link, position) => ({
     ...link,
     icon: category.icon,
     meta: String(position + 1).padStart(2, '0'),
   }))
-  const technology = findTechnology(category.technology)
-  const others: LinkCard[] = following(serviceCategories, index, technology ? 2 : 3).map(
-    (other) => ({
-      href: categoryPath(other),
-      name: other.name,
-      summary: other.summary,
-      icon: other.icon,
-      meta: 'Practice area',
-    }),
-  )
 
   return (
     <CatalogDocument path={path} title={pageTitle(category.name)} description={category.heroBody}>
@@ -188,7 +176,6 @@ export function ServiceCategoryDocument({ category }: { category: ServiceCategor
       <div className={'page-wrapper'}>
         <ServiceLinkCardGrid
           id={'services'}
-          eyebrow={'Services'}
           title={`${category.name} services`}
           intro={
             category.summary + '. Choose a service to see what it covers and what you receive.'
@@ -201,18 +188,17 @@ export function ServiceCategoryDocument({ category }: { category: ServiceCategor
           title={'Why it matters'}
           body={category.overviewBody}
           points={category.benefits.map((benefit) => `${benefit.title}: ${benefit.body}`)}
+          highlights={category.benefits}
         />
         <ApproachFeature
-          title={'How every engagement runs'}
+          title={
+            <span>
+              How every <span style={{ color: '#4D51AB' }}>engagement</span> runs
+            </span>
+          }
           body={'The same disciplined approach, whichever service you choose.'}
           steps={category.approach}
           image={featureImage}
-        />
-        <LinkCardGrid
-          eyebrow={'Keep exploring'}
-          title={'Related areas'}
-          cards={[...(technology ? [technologyCard(technology, 'Technology')] : []), ...others]}
-          tinted
         />
       </div>
       <ServiceCtaFooter
