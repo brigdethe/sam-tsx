@@ -39,9 +39,9 @@ export const leaders: Leader[] = [
   },
   {
     name: 'Naa Koshie Wellington',
-    role: 'Customer Success Specialist',
+    role: 'Customer Experience Manager',
     image: '/images/team/naa-koshie-wellington.webp',
-    bio: ['Naa Koshie supports clients as Customer Success Specialist at Maddy Group.'],
+    bio: ['Naa Koshie supports clients as Customer Experience Manager at Maddy Group.'],
   },
   {
     name: 'Agyare Fredrick',
