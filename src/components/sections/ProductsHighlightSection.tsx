@@ -20,6 +20,24 @@ const products: Product[] = [
     image: '/images/brand/software-collaboration-mizuno-k-12899191.jpg',
     imageAlt: 'Colleagues working together on a shared document',
     color: '#010535',
+    images: [
+      {
+        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_desktop.png',
+        alt: 'Memo Full',
+      },
+      {
+        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_%20main.png',
+        alt: 'Memo One',
+      },
+      {
+        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_mobile.png',
+        alt: 'Memo Two',
+      },
+      {
+        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_tab.png',
+        alt: 'Memo Three',
+      },
+    ],
   },
   {
     name: 'MaddyOps',
