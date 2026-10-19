@@ -1,11 +1,11 @@
 import express, { type Express } from 'express'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { renderDocument, renderNotFound } from './renderDocument.js'
-import { siteRoutes } from './routes.js'
-import { llmsTxt, redirectFor, robotsTxt, sitemapXml } from '../content/seo.js'
+import { renderDocument, renderNotFound } from './app/renderDocument.js'
+import { siteRoutes } from './app/routes.js'
+import { llmsTxt, redirectFor, robotsTxt, sitemapXml } from './content/seo.js'
 
-const projectRoot = resolve(import.meta.dirname, '../..')
+const projectRoot = resolve(import.meta.dirname, '..')
 const publicRoot = resolve(projectRoot, 'public')
 
 export function createApp(): Express {
