@@ -4227,6 +4227,20 @@ html.is-page-loading {
   transform: translate(70%, -50%) scale(0);
 }
 
+/* Keep the current page filled even when the pointer leaves its menu item. */
+.navbar .dropdown-link.arrow-fill[aria-current='page'] .arrow-fill__fill {
+  inset: 0;
+  background-color: var(--af-fill-bg);
+}
+
+.navbar .dropdown-link.arrow-fill[aria-current='page'] .arrow-fill__label--filled {
+  clip-path: inset(0 round 999px);
+}
+
+.navbar .dropdown-link.arrow-fill[aria-current='page'] .arrow-fill__icon {
+  color: var(--af-arrow-hover);
+}
+
 /* Buttons: a white arrow circle that fills the button on hover, turning the
    label to the button's own colour. The fill replaces Webflow's hover tint. */
 .button.arrow-fill--button {
