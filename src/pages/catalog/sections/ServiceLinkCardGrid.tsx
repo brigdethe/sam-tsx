@@ -103,9 +103,6 @@ export function ServiceLinkCardGrid({
                       </section>
                     </div>
                   ) : null}
-                  <a className={'cat-service-detail__link'} href={card.href}>
-                    {'View service details'}
-                  </a>
                 </aside>
               )
             })}
