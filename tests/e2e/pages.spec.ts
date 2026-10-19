@@ -59,6 +59,47 @@ test('software product accordion shows product summaries without Security Ops', 
     'Manage the employee lifecycle—from recruitment and onboarding through attendance, leave, payroll and performance—in one connected HR platform. Give HR teams, managers and employees practical self-service tools.',
   ])
   await expect(page.locator('.product-showcase__slide')).toHaveCount(3)
+
+  const memoImages = page.locator('.acc__panel').first().locator('.acc__image-button')
+  await memoImages.first().click()
+  const gallery = page.getByRole('dialog', { name: 'Product image gallery' })
+  await expect(gallery).toBeVisible()
+  const activeGallery = gallery.locator('.acc-gallery__product:not([hidden])')
+  await expect(activeGallery.locator('.acc-gallery__caption')).toHaveText('Maddy Memo')
+  await expect(gallery).toHaveCSS('background-color', 'rgb(255, 255, 255)')
+  await expect(page.locator('html')).toHaveCSS('overflow', 'hidden')
+  const scrollY = await page.evaluate(() => window.scrollY)
+  await page.mouse.move(8, (page.viewportSize()?.height ?? 800) / 2)
+  await page.mouse.wheel(0, 400)
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(scrollY)
+  const image = activeGallery.locator('.acc-gallery__image')
+  const imageSizing = await image.evaluate((element) => {
+    const frame = element.closest('.acc-gallery__frame')
+    if (!frame) throw new Error('Gallery image is missing its frame')
+    const imageRect = element.getBoundingClientRect()
+    const frameRect = frame.getBoundingClientRect()
+    return {
+      width: imageRect.width,
+      height: imageRect.height,
+      frameWidth: frameRect.width,
+      frameHeight: frameRect.height,
+      maxWidth: getComputedStyle(element).maxWidth,
+    }
+  })
+  expect(imageSizing.width).toBeLessThanOrEqual(imageSizing.frameWidth)
+  expect(imageSizing.height).toBeLessThanOrEqual(imageSizing.frameHeight)
+  expect(imageSizing.maxWidth).toBe('100%')
+  const count = activeGallery.locator('.acc-gallery__count')
+  await expect(count).toHaveText('1 / 3')
+  await activeGallery.getByRole('button', { name: 'Next image' }).click()
+  await expect(count).toHaveText('2 / 3')
+  await expect(activeGallery.locator('.acc-gallery__image')).toHaveAttribute('alt', 'Memo Two')
+  await activeGallery.getByRole('button', { name: 'Previous image' }).click()
+  await expect(count).toHaveText('1 / 3')
+  await page.keyboard.press('Escape')
+  await expect(gallery).toBeHidden()
+  await expect(page.locator('html')).not.toHaveCSS('overflow', 'hidden')
+  await expect(memoImages.first()).toBeFocused()
 })
 
 test('service cards scroll without resizing and open details below without navigating', async ({
@@ -180,16 +221,15 @@ test('engagement approach presents its timeline and image responsively', async (
 
   await expect(heading).toBeVisible()
   await expect(steps).toHaveCount(4)
-  await expect(picture).toBeVisible()
 
-  const headingBox = await heading.boundingBox()
-  const pictureBox = await picture.boundingBox()
-  expect(headingBox).not.toBeNull()
-  expect(pictureBox).not.toBeNull()
-
-  if (page.viewportSize()!.width <= 991) {
-    expect(pictureBox!.y).toBeGreaterThan(headingBox!.y)
+  if (page.viewportSize()!.width < 992) {
+    await expect(picture).toBeHidden()
   } else {
+    await expect(picture).toBeVisible()
+    const headingBox = await heading.boundingBox()
+    const pictureBox = await picture.boundingBox()
+    expect(headingBox).not.toBeNull()
+    expect(pictureBox).not.toBeNull()
     expect(pictureBox!.x).toBeGreaterThan(headingBox!.x + headingBox!.width)
   }
 

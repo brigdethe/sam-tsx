@@ -25,16 +25,16 @@ const products: Product[] = [
         src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_desktop.png',
         alt: 'Memo Full',
       },
+      // {
+      //   src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_%20main.png',
+      //   alt: 'Memo One',
+      // },
       {
-        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_%20main.png',
-        alt: 'Memo One',
-      },
-      {
-        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_mobile.png',
+        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_tab.png',
         alt: 'Memo Two',
       },
       {
-        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_tab.png',
+        src: 'https://maddy-web-assets.lon1.cdn.digitaloceanspaces.com/maddy_memo_mobile.png',
         alt: 'Memo Three',
       },
     ],
@@ -57,30 +57,13 @@ const products: Product[] = [
     imageAlt: 'The BeaconOS dashboard',
     color: '#1E40AF',
     images: [
-      { src: '/images/BeaconOS Full.png', alt: 'BeaconOS Full' },
-      { src: '/images/BeaconOS One.png', alt: 'BeaconOS One' },
-      { src: '/images/BeaconOS Two.png', alt: 'BeaconOS Two' },
-      { src: '/images/BeaconOS Three.png', alt: 'BeaconOS Three' },
+      { src: '/images/beacon-os-full.png', alt: 'BeaconOS Full' },
+      { src: '/images/beacon-os-one.png', alt: 'BeaconOS One' },
+      { src: '/images/beacon-os-two.png', alt: 'BeaconOS Two' },
+      { src: '/images/beacon-os-three.png', alt: 'BeaconOS Three' },
     ],
   },
 ]
-
-// The gallery is a flat list so a product can contribute more than one picture
-// later without changing the rows above. A row opens the first entry that
-// names it.
-type Shot = {
-  product: string
-  title: string
-  desc: string
-  url: string
-}
-
-const shots: Shot[] = products.map((product) => ({
-  product: product.name,
-  title: product.name,
-  desc: product.label,
-  url: product.image,
-}))
 
 const items: AccordionItem[] = products.map((product) => ({
   id: product.name.toLowerCase().replace(/\s+/g, '-'),
@@ -88,17 +71,8 @@ const items: AccordionItem[] = products.map((product) => ({
   title: product.name,
   description: product.description,
   color: product.color,
-  images: product.images || [],
+  images: product.images?.length ? product.images : [{ src: product.image, alt: product.imageAlt }],
 }))
-
-// The dialog renders the first shot server side so it is never empty before
-// the script runs. Indexed access is checked, hence the fallback.
-const firstShot: Shot = shots[0] ?? {
-  product: '',
-  title: '',
-  desc: '',
-  url: '',
-}
 
 export function ProductsHighlightSection() {
   return (
@@ -131,7 +105,7 @@ export function ProductsHighlightSection() {
                     className="product-showcase__slide"
                     style={{ backgroundColor: product.color }}
                   >
-                    <img src={product.image} alt="" loading="lazy" />
+                    <img src={product.image ?? null} alt="" loading="lazy" />
                   </div>
                 ))}
               </div>
@@ -158,66 +132,6 @@ export function ProductsHighlightSection() {
           </a>
         </div>
       </div>
-
-      <dialog
-        id="product-gallery"
-        className="pg"
-        aria-label="Software product pictures"
-        data-pg-shots={JSON.stringify(shots)}
-      >
-        <form method="dialog">
-          <button className="pg__close" aria-label="Close">
-            <svg
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              aria-hidden="true"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </button>
-        </form>
-
-        <div className="pg__stage">
-          <figure className="pg__frame is-entering" data-pg-frame="true">
-            <img
-              className="pg__image"
-              data-pg-image="true"
-              src={firstShot.url}
-              alt={firstShot.title}
-            />
-            <figcaption className="pg__caption">
-              <h3 className="pg__title" data-pg-title="true">
-                {firstShot.title}
-              </h3>
-              <p className="pg__desc" data-pg-desc="true">
-                {firstShot.desc}
-              </p>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div className="pg__dock" data-pg-dock="true">
-          <div className="pg__dock-inner">
-            {shots.map((shot, index) => (
-              <button
-                key={shot.url}
-                type="button"
-                className="pg__thumb"
-                data-pg-index={index}
-                aria-label={shot.title}
-              >
-                <img src={shot.url} alt="" loading="lazy" />
-              </button>
-            ))}
-          </div>
-        </div>
-      </dialog>
     </section>
   )
 }
