@@ -4134,20 +4134,6 @@ html.is-page-loading {
   transition: none !important;
 }
 
-.navbar .dropdown-link.navbar-dl-link:hover,
-.navbar .dropdown-link.navbar-dl-link.arrow-fill.w--current {
-  background-color: var(--color--flow-lime) !important;
-  color: var(--color--white) !important;
-}
-
-.navbar .dropdown-link.navbar-dl-link.arrow-fill.w--current span {
-  transition: none !important;
-}
-
-.navbar .dropdown-link.navbar-dl-link.arrow-fill.w--current svg {
-  transition: none !important;
-}
-
 .arrow-fill .arrow-fill__label {
   position: relative;
   z-index: 1;
@@ -4271,11 +4257,6 @@ html.is-page-loading {
 .button.is-black-button.arrow-fill--button:focus-visible {
   background-color: var(--color--white);
   transition-delay: var(--af-duration);
-}
-
-.navbar .dropdown-link.navbar-dl-link.arrow-fill.w--current > span.arrow-fill__icon:hover {
-  color: var(--color--flow-lime) !important;
-  background-color: var(--color--white) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

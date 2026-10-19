@@ -46,6 +46,7 @@ test.describe('navbar on desktop', () => {
     await toggle(page, 0).hover()
     const item = panel(page, 0).locator('a.arrow-fill', { hasText: 'Training' })
     await item.hover()
+    await expect(item).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
     await expect(item.locator('.arrow-fill__fill')).toHaveCSS(
       'background-color',
       'rgb(77, 81, 171)',
@@ -53,6 +54,41 @@ test.describe('navbar on desktop', () => {
     await item.click()
     await expect(page).toHaveURL(/\/training$/)
   })
+
+  for (const { path, menu } of [
+    { path: '/training', menu: 0 },
+    { path: '/partners/cardlogix', menu: 1 },
+  ]) {
+    test(`current dropdown link keeps its fill animation on ${path}`, async ({ page }) => {
+      await gotoReady(page, path)
+      await toggle(page, menu).hover()
+      const item = panel(page, menu).locator('a[aria-current="page"]')
+      const label = item.locator('.arrow-fill__label').first()
+      const restingColor = await label.evaluate((element) => getComputedStyle(element).color)
+
+      await item.hover()
+
+      await expect(item).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
+      await expect(label).toHaveCSS('color', restingColor)
+      for (const selector of [
+        '.arrow-fill__fill',
+        '.arrow-fill__label--filled',
+        '.arrow-fill__arrow--in',
+      ]) {
+        const duration = await item.locator(selector).evaluate((element) =>
+          getComputedStyle(element)
+            .transitionDuration.split(',')
+            .map((value) => parseFloat(value)),
+        )
+        expect(duration.some((seconds) => seconds > 0)).toBe(true)
+      }
+
+      await expect(item.locator('.arrow-fill__fill')).toHaveCSS('left', '0px')
+      await expect(item.locator('.arrow-fill__icon')).toHaveCSS('color', 'rgb(255, 255, 255)')
+      await toggle(page, menu).hover()
+      await expect(item.locator('.arrow-fill__fill')).not.toHaveCSS('left', '0px')
+    })
+  }
 
   test('Contact Us button matches the menu pill height', async ({ page }) => {
     const pill = await page.locator('.navbar .nav-menu').boundingBox()
