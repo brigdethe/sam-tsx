@@ -1266,7 +1266,6 @@
   --cat-service-card-size: min(15rem, calc(100vw - 3rem));
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 1rem;
   min-width: 0;
   margin: 0;
